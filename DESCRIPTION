@@ -1,0 +1,18 @@
+Package: rmdTemplates
+Type: Package
+Title: A collection of Rmarkdown templates
+Version: 0.1
+Date: 2014-07-25
+Author: F. Rodriguez-Sanchez <f.rodriguez.sanc@gmail.com>
+Maintainer: F. Rodriguez-Sanchez <f.rodriguez.sanc@gmail.com>
+Description: A collection of Rmarkdown templates. Include helpful defaults for
+    knitr options, and support for citations and different bibliography styles.
+    After installing the package, click on `create new Rmarkdown document` in
+    Rstudio to have access to the templates. See
+    http://rmarkdown.rstudio.com/developer_document_templates.html for more
+    information.
+License: CC-BY
+Imports:
+    knitr,
+    knitcitations,
+    rmarkdown

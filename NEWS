@@ -1,0 +1,4 @@
+rmdTemplates 0.1
+================
+
+* Created package with generic Rmarkdown template including default knitr options and citations support (through `knitcitations` package).
