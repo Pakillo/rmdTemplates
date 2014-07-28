@@ -1,3 +1,8 @@
+rmdTemplates 0.1-1
+==================
+
+* Added new Rmd_template_manuscript to produce pdf with manuscript format. Partly based on Carl Boettiger's template
+
 rmdTemplates 0.1
 ================
 
