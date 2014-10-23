@@ -1,0 +1,133 @@
+---
+title: 'Example Manuscript: A template for using an R package to house a reproducible manuscript'
+author:  
+- name: Jeffrey W. Hollister
+  affilnum: '1,2'
+- name: Another Author 
+  affilnum: 2
+  email: author.another@example.com
+- name: Big A. Ecologist
+  affilnum: 3
+affiliation:
+- affilnum: 1
+  affil: US Environmental Protection Agency, Office of Research and Development, National Health and Environmental Effects Research Laboratory, Atlantic Ecology Division, 27 Tarzwell Drive  Narragansett, RI, 02882, USA
+- affilnum: 2
+  affil: Big Name University, Department of R, City, BN, 01020, USA
+- affilnum: 3
+  affil: Private Research Institute, Office of Large Thoughts, Department of Beer, Cool Town, ST, 99921, USA
+output:
+  pdf_document:
+    fig_caption: yes
+    keep_tex: yes
+    number_sections: yes
+    template: components/manuscript.latex
+  html_document: null
+  word_document: null
+fontsize: 11pt
+capsize: normalsize
+csl: components/ecology.csl
+documentclass: article
+spacing: doublespacing
+linenumbers: no
+bibliography: components/manuscript.bib
+abstract: no
+---
+<!--
+%\VignetteEngine{knitr::rmarkdown}
+%\VignetteIndexEntry{Example Manuscript}
+-->
+
+```{r setup, include=FALSE, echo=FALSE}
+#Put whatever you normally put in a setup chunk.
+#I usually at least include:
+#devtools::install_github("manuscriptPackage","jhollist")
+#library("manuscriptPackage")
+#Didn't do that here to expedite building of the example vignette
+library("knitr")
+
+opts_chunk$set(dev = 'pdf', fig.width=6, fig.height=5)
+
+# Table Captions from @DeanK on http://stackoverflow.com/questions/15258233/using-table-caption-on-r-markdown-file-using-knitr-to-use-in-pandoc-to-convert-t
+#Figure captions are handled by LaTeX
+
+knit_hooks$set(tab.cap = function(before, options, envir) {
+                  if(!before) { 
+                    paste('\n\n:', options$tab.cap, sep='') 
+                  }
+                })
+default_output_hook = knit_hooks$get("output")
+knit_hooks$set(output = function(x, options) {
+  if (is.null(options$tab.cap) == FALSE) {
+    x
+  } else
+    default_output_hook(x,options)
+})
+```
+
+```{r analysis , include=FALSE, echo=FALSE, cache=FALSE}
+#All analysis in here, that way all bits of the paper have access to the final objects
+#Place tables and figures and numerical results where they need to go.
+```
+
+<!-- Abstract is being wrapped in latex here so that all analysis can be run in the chunk above and the results reproducibly referenced in the abstract. -->
+
+\singlespace
+
+\vspace{2mm}\hrule
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer in sem sed sem pharetra eleifend vitae id massa. Curabitur et erat sit amet enim gravida dapibus quis vel ex. Maecenas luctus suscipit magna id vehicula. Quisque tincidunt auctor dignissim. Nunc vitae nulla vel lorem facilisis interdum non in mi. Donec fringilla luctus lacus ut egestas. Pellentesque eget tellus et ante tristique euismod. Proin at scelerisque ex, ac faucibus sem. In nec efficitur nulla. Nam libero augue, tristique et neque sed, pellentesque commodo lacus. Morbi vitae ultrices arcu. Suspendisse elit neque, placerat vitae venenatis id, auctor vestibulum augue. Vivamus iaculis magna at sapien sodales, a sagittis tellus sagittis. Sed laoreet ac massa id fringilla. In et enim eget ante tincidunt aliquet ut in risus. In vestibulum, nisl non viverra ullamcorper, odio nisl scelerisque sapien, vitae ornare neque odio ut odio. Maecenas vitae leo rhoncus, egestas quam ac, dapibus eros. Quisque molestie venenatis urna quis malesuada. Sed malesuada semper malesuada. Nulla aliquet maximus urna eu eleifend. Suspendisse elementum est vel ornare pulvinar. Curabitur quis aliquet massa, eget sollicitudin tellus. Phasellus tempus urna molestie finibus ultricies.
+
+\vspace{3mm}\hrule
+\doublespace
+
+#Introduction
+Nullam et accumsan urna, mollis vulputate dolor. Donec nec nisl sagittis, laoreet nibh a, imperdiet eros. Ut sagittis ipsum diam. Nulla auctor justo eu ante sodales sollicitudin. Aenean leo lacus, consequat et aliquet vel, faucibus sit amet mi. Donec non nunc nec turpis cursus mattis a vel eros. Sed sit amet velit lacinia, congue est non, pulvinar dolor. Suspendisse felis erat, congue sit amet nunc nec, semper porttitor magna. Nunc Hollister et al. [-@hollister_predicting_2011] eu ornare  purus. Suspendisse id nulla in massa pharetra fringilla. Quisque vestibulum diam a ligula scelerisque, sit amet suscipit erat laoreet. Phasellus erat turpis, porta at nisi nec, eleifend interdum sem.
+
+Suspendisse elit neque, placerat vitae venenatis id, auctor vestibulum augue. Vivamus iaculis magna at sapien sodales, a sagittis tellus sagittis. Sed laoreet ac massa id fringilla. In et enim eget ante tincidunt aliquet ut in risus. In vestibulum, nisl non viverra ullamcorper, odio nisl scelerisque sapien, vitae ornare neque odio ut odio. Maecenas vitae leo rhoncus, egestas quam ac, dapibus eros. Quisque molestie venenatis urna quis malesuada. Sed malesuada semper malesuada. Nulla aliquet maximus urna eu eleifend. Suspendisse elementum est vel ornare pulvinar. Curabitur quis aliquet massa, eget sollicitudin tellus. Phasellus tempus urna molestie finibus ultricies.
+
+#Methods
+
+##Data and Study Area
+Sed in augue non augue finibus lobortis. Maecenas imperdiet metus non nisi imperdiet feugiat. Duis ac mauris metus. Nunc tempus est quis metus consectetur, nec suscipit dui condimentum. Nam quis neque eu magna suscipit imperdiet quis quis odio. Curabitur dignissim lorem eu risus placerat fringilla. Fusce a odio eleifend neque semper sodales vitae eu dui. Nullam laoreet, diam pellentesque gravida eleifend, lorem massa sollicitudin tellus, et convallis nibh neque quis metus. Interdum et malesuada fames ac ante ipsum primis in faucibus.
+
+Nullam diam quam, egestas sed erat quis, placerat tincidunt nisl. Sed varius ac tortor eget fermentum. Sed ac magna tellus. Cras dolor felis, gravida eu lacus eget, convallis efficitur lacus. In vulputate neque quis eros consectetur, sit amet vehicula quam consequat. Nulla euismod quis lorem sit amet dapibus. Nam hendrerit ante et leo rutrum dignissim. Maecenas semper nec magna quis aliquam. Vivamus urna purus, lobortis ut imperdiet a, pretium in mauris.[@usepa2009national;@homer2004development;@xian2009updating;@hollister2010volume;@hollister_predicting_2011;@lakemorpho2014;@beaulieu2013nutrients].  
+
+Nullam et accumsan urna, mollis vulputate dolor. Donec nec nisl sagittis, laoreet nibh a, imperdiet eros. Ut sagittis ipsum diam. Nulla auctor justo eu ante sodales sollicitudin. Aenean leo lacus, consequat et aliquet vel, faucibus sit amet mi. Donec non nunc nec turpis cursus mattis a vel eros. Sed sit amet velit lacinia, congue est non, pulvinar dolor. [@usepa2009national].  Suspendisse felis erat, congue sit amet nunc nec, semper porttitor magna. Nunc eu ornare purus. Suspendisse id nulla in massa pharetra fringilla. Quisque vestibulum diam a ligula scelerisque, sit amet suscipit erat laoreet. Phasellus erat turpis, porta at nisi nec, eleifend interdum sem. [@homer2004development;@xian2009updating].  
+
+Suspendisse elit neque, placerat vitae venenatis id, auctor vestibulum augue. Vivamus iaculis magna at sapien sodales, a sagittis tellus sagittis. Sed laoreet ac massa id fringilla. In et enim eget ante tincidunt aliquet ut in risus(Table \ref{tab:Table1}). In vestibulum, nisl non viverra ullamcorper, odio nisl scelerisque sapien, vitae ornare neque odio ut odio. Maecenas vitae leo rhoncus, egestas quam ac, dapibus eros. 
+
+```{r Table1, results='asis', echo=FALSE, tab.cap="This is the first example table\\label{tab:Table1}",cache=FALSE}
+kable(head(iris))
+```
+
+#Results
+Nullam et accumsan urna, mollis vulputate dolor. Donec nec nisl sagittis, laoreet nibh a, imperdiet eros. Ut sagittis ipsum diam. Nulla auctor justo eu ante sodales sollicitudin. Aenean leo lacus, consequat et aliquet vel, faucibus sit amet mi. Donec non nunc nec turpis cursus mattis a vel eros. Sed sit amet velit lacinia, congue est non, pulvinar dolor (Figure \ref{fig:Fig1}). Suspendisse felis erat, congue sit amet nunc nec, semper porttitor magna (Table \ref{tab:Table2}). Nunc eu ornare purus. Suspendisse id nulla in massa pharetra fringilla. Quisque vestibulum diam a ligula scelerisque, sit amet suscipit erat laoreet. Phasellus erat turpis, porta at nisi nec, eleifend interdum sem.
+
+```{r Fig1, echo=FALSE, fig.cap="Just my first figure with a very fantastic caption.\\label{fig:Fig1}", cache=FALSE}
+x<-rnorm(100)
+y<-jitter(x,1000)
+plot(x,y)
+
+```
+
+```{r Table2, results='asis', echo=FALSE,tab.cap="A second table showing some of the mtcars dataset.\\label{tab:Table2}",cache=FALSE}
+kable(mtcars[10:16,])
+```
+
+Nullam et accumsan urna, mollis vulputate dolor. Donec nec nisl sagittis, laoreet nibh a, imperdiet eros. Ut sagittis ipsum diam. Nulla auctor justo eu ante sodales sollicitudin. Aenean leo lacus, consequat et aliquet vel, faucibus sit amet mi. Donec non nunc nec turpis cursus mattis a vel eros. Sed sit amet velit lacinia, congue est non, pulvinar dolor (Figure \ref{fig:Fig2}). Suspendisse felis erat, congue sit amet nunc nec, semper porttitor magna. Nunc eu ornare purus. Suspendisse id nulla in massa pharetra fringilla. Quisque vestibulum diam a ligula scelerisque, sit amet suscipit erat laoreet. Phasellus erat turpis, porta at nisi nec, eleifend interdum sem.
+
+```{r Fig2, echo=FALSE, fig.cap="Second figure showing a boxplot with ground breaking results. \\label{fig:Fig2}",cache=FALSE}
+a<-sort(rnorm(100))
+b<-c(rep("Group Small",35),rep("Group Big",65))
+boxplot(a~b)
+```
+
+
+#Discussion
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer in sem sed sem pharetra eleifend vitae id massa. Curabitur et erat sit amet enim gravida dapibus quis vel ex. Maecenas luctus suscipit magna id vehicula. Quisque tincidunt auctor dignissim. Nunc vitae nulla vel lorem facilisis interdum non in mi. Donec fringilla luctus lacus ut egestas. Pellentesque eget tellus et ante tristique euismod. Proin at scelerisque ex, ac faucibus sem. In nec efficitur nulla. Nam libero augue, tristique et neque sed, pellentesque commodo lacus. Morbi vitae ultrices arcu.
+
+Nullam et accumsan urna, mollis vulputate dolor. Donec nec nisl sagittis, laoreet nibh a, imperdiet eros. Ut sagittis ipsum diam. Nulla auctor justo eu ante sodales sollicitudin. Aenean leo lacus, consequat et aliquet vel, faucibus sit amet mi. Donec non nunc nec turpis cursus mattis a vel eros. Sed sit amet velit lacinia, congue est non, pulvinar dolor. Suspendisse felis erat, congue sit amet nunc nec, semper porttitor magna. Nunc eu ornare purus. Suspendisse id nulla in massa pharetra fringilla. Quisque vestibulum diam a ligula scelerisque, sit amet suscipit erat laoreet. Phasellus erat turpis, porta at nisi nec, eleifend interdum sem.
+
+Suspendisse elit neque, placerat vitae venenatis id, auctor vestibulum augue. Vivamus iaculis magna at sapien sodales, a sagittis tellus sagittis. Sed laoreet ac massa id fringilla. In et enim eget ante tincidunt aliquet ut in risus. In vestibulum, nisl non viverra ullamcorper, odio nisl scelerisque sapien, vitae ornare neque odio ut odio. Maecenas vitae leo rhoncus, egestas quam ac, dapibus eros. Quisque molestie venenatis urna quis malesuada. Sed malesuada semper malesuada. Nulla aliquet maximus urna eu eleifend. Suspendisse elementum est vel ornare pulvinar. Curabitur quis aliquet massa, eget sollicitudin tellus. Phasellus tempus urna molestie finibus ultricies.
+
+#References
