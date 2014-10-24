@@ -1,0 +1,166 @@
+---
+title: "My title"
+
+author: "Your name"
+          
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+
+bibliography: references.bib
+#csl: bibliostyle.csl
+
+output:
+  html_document:
+    self_contained: true
+    theme: flatly
+    highlight: default
+    toc: false
+    toc_depth: 3
+    keep_md: false
+    fig_height: 7
+    fig_width: 9
+    fig_caption: true
+    
+---
+
+
+
+
+
+
+```{r knitr_setup, include=FALSE, cache=FALSE}
+
+library(rmarkdown)
+library(knitr)
+
+### Chunk options ###
+
+# Modify at your will #
+
+## Text results
+opts_chunk$set(echo = TRUE, warning=TRUE, message=TRUE)
+
+## Code decoration
+opts_chunk$set(tidy=TRUE, comment = NA, highlight = TRUE)
+
+## Cache
+opts_chunk$set(cache = 2, cache.path = "output/cache/")
+opts_chunk$set(cache.extra = rand_seed)
+
+## Plots
+opts_chunk$set(fig.path = "output/figures/")
+opts_chunk$set(dpi = 300, fig.align = "default")   # may want 'center' sometimes
+
+# Figure format
+opts_chunk$set(dev='png')  # e.g. choose among 'pdf', 'png', 'svg'...
+# may include specific dev.args as a list... see knitr help
+
+
+```
+
+
+```{r citations_setup, include=FALSE, cache=FALSE}
+
+library(knitcitations)
+cleanbib()   
+cite_options(citation_format = "pandoc")
+
+if (file.exists("references.bib")) 
+  refs_from_file <- read.bibtex("references.bib", check=FALSE)
+
+```
+
+
+
+```{r embed_data, results='asis',echo=FALSE, message=FALSE}
+
+# The function below, when called, will print HTML code containing a link to an encoded version of an RData file.
+
+## Author: Richard Morey (http://bayesfactor.blogspot.com.es/2014/09/embedding-rdata-files-in-rmarkdown.html) ##
+
+setDownloadURI <-  function(dataset, filename = 'Rmd_data', textHTML = "Click here to download the data.", fileext = "RData", envir = parent.frame()){
+  require(base64enc, quietly = TRUE)
+  divname <- paste(sample(LETTERS),collapse="")
+  tf <- tempfile(pattern=filename, fileext = fileext)
+  save(list = dataset, file = tf, envir = envir)
+  filenameWithExt <- paste(filename,fileext,sep=".")
+  
+  uri <- base64enc::dataURI(file = tf, mime = "application/octet-stream", encoding = "base64")
+  cat("<a style='text-decoration: none' id='",divname,"'></a>
+      <script>
+      var a = document.createElement('a');
+      var div = document.getElementById('",divname,"');
+      div.appendChild(a);
+      a.setAttribute('href', '",uri,"');
+      a.innerHTML = '",textHTML,"' + ' (",filenameWithExt,")';
+      if (typeof a.download != 'undefined') {
+      a.setAttribute('download', '",filenameWithExt,"');
+      }else{
+      a.setAttribute('onclick', 'confirm(\"Your browser does not support the download HTML5 attribute. You must rename the file to ",filenameWithExt," after downloading it (or use Chrome/Firefox/Opera). \")');
+      }
+      </script>",
+      sep="")
+  }
+
+
+setDownloadURI(dataset)    # write name of your dataset here
+
+```
+
+
+
+
+```{r embed_Rmd, comment = NA, results = 'asis', echo = F}
+
+# Author: Ramnath Vaidyanathan (http://rpubs.com/ramnathv/including_rmd_source)
+
+add_download_link = function(file){
+  myrmd <-  base64enc::dataURI(file = file, mime = 'text/rmd')
+  dl_link = "<a href='%s' target='_blank' download='Rmd_source.Rmd'>
+   <span class='glyphicon glyphicon-cloud-download' style='font-size:1.2em;'></span> 
+    Download Rmd source
+  </a>"
+  cat(sprintf(dl_link, myrmd))
+}
+
+add_download_link("skeleton.Rmd")   # write name of the Rmd file here
+
+```
+
+
+
+
+
+## Your text, code, plots here
+
+Rmarkdown is great `r citep(citation("knitr"))`. 
+
+You can write all your R code in chunks here and the output will appear in the final document. For example:
+
+```{r test, echo=FALSE, cache=FALSE}
+cat("Hello world!")
+```
+
+
+If you put a BibTeX file with references ("references.bib") in the working directory, you can cite any of them like these: @Xie_2013. Or cite by doi, e.g. `r citet("10.1098/rspb.2013.1372")`, thanks to `knitcitations` package `r citep(citation("knitcitations"))`. 
+
+You can even specifiy the desired format for your bibliography by including a style file ("bibliostyle.csl"). See [Rstudio website](http://rmarkdown.rstudio.com/authoring_bibliographies_and_citations.html) for more help. You can grab many different bibliography styles here: http://citationstyles.org/.
+
+There is a chunk in the end to provide your session info at the end of the document (useful for reproducibility). Set eval=FALSE if you don't want to include that info in your document.
+
+
+```{r sessionInfo, cache=FALSE, echo=FALSE, eval=FALSE}
+sessionInfo()
+```
+
+
+## References
+
+```{r generate_references, cache=FALSE, include=FALSE, results='hide'}
+write.bibtex(file="references.bib", append=file.exists("references.bib"))
+
+```
+
+
+
+
+
