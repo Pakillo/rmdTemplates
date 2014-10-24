@@ -1,3 +1,9 @@
+rmdTemplates 0.1-4
+==================
+
+* Added new data_Rmd_within_HTML template that embeds data and/or the Rmd source within the HTML report.
+
+
 rmdTemplates 0.1-3
 ==================
 
