@@ -13,6 +13,7 @@
 #' @import knitr
 #' @import knitcitations
 #' @import rmarkdown
+#' @importFrom base64enc dataURI
 #' @author F. Rodriguez-Sanchez \email{f.rodriguez.sanc@@gmail.com}
 #' @keywords package
 #'

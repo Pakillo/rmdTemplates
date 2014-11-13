@@ -1,3 +1,10 @@
+rmdTemplates 0.2
+==================
+
+* Added two new functions to embed data (embed_data_html) or the Rmarkdown source code (embed_rmd_html) in an HTML file.
+
+
+
 rmdTemplates 0.1-4
 ==================
 

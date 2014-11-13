@@ -11,10 +11,8 @@ bibliography: references.bib
 output:
   html_document:
     self_contained: true
-    theme: flatly
-    highlight: default
     toc: false
-    toc_depth: 3
+    toc_depth: 2
     keep_md: false
     fig_height: 7
     fig_width: 9
@@ -73,56 +71,20 @@ if (file.exists("references.bib"))
 
 ```{r embed_data, results='asis',echo=FALSE, message=FALSE}
 
-# The function below, when called, will print HTML code containing a link to an encoded version of an RData file.
+library(rmdTemplates)
 
-## Author: Richard Morey (http://bayesfactor.blogspot.com.es/2014/09/embedding-rdata-files-in-rmarkdown.html) ##
-
-setDownloadURI <-  function(dataset, filename = 'Rmd_data', textHTML = "Click here to download the data.", fileext = "RData", envir = parent.frame()){
-  require(base64enc, quietly = TRUE)
-  divname <- paste(sample(LETTERS),collapse="")
-  tf <- tempfile(pattern=filename, fileext = fileext)
-  save(list = dataset, file = tf, envir = envir)
-  filenameWithExt <- paste(filename,fileext,sep=".")
-  
-  uri <- base64enc::dataURI(file = tf, mime = "application/octet-stream", encoding = "base64")
-  cat("<a style='text-decoration: none' id='",divname,"'></a>
-      <script>
-      var a = document.createElement('a');
-      var div = document.getElementById('",divname,"');
-      div.appendChild(a);
-      a.setAttribute('href', '",uri,"');
-      a.innerHTML = '",textHTML,"' + ' (",filenameWithExt,")';
-      if (typeof a.download != 'undefined') {
-      a.setAttribute('download', '",filenameWithExt,"');
-      }else{
-      a.setAttribute('onclick', 'confirm(\"Your browser does not support the download HTML5 attribute. You must rename the file to ",filenameWithExt," after downloading it (or use Chrome/Firefox/Opera). \")');
-      }
-      </script>",
-      sep="")
-  }
-
-
-setDownloadURI(dataset)    # write name of your dataset here
+embed_data_html('dataset')    # write name of your dataset here
 
 ```
 
 
 
 
-```{r embed_Rmd, comment = NA, results = 'asis', echo = F}
+```{r embed_Rmd, comment = NA, results = 'asis', echo = FALSE}
 
-# Author: Ramnath Vaidyanathan (http://rpubs.com/ramnathv/including_rmd_source)
+library(rmdTemplates)
 
-add_download_link = function(file){
-  myrmd <-  base64enc::dataURI(file = file, mime = 'text/rmd')
-  dl_link = "<a href='%s' target='_blank' download='Rmd_source.Rmd'>
-   <span class='glyphicon glyphicon-cloud-download' style='font-size:1.2em;'></span> 
-    Download Rmd source
-  </a>"
-  cat(sprintf(dl_link, myrmd))
-}
-
-add_download_link("skeleton.Rmd")   # write name of the Rmd file here
+embed_rmd_html("skeleton.Rmd")   # write name of the Rmd file here
 
 ```
 
