@@ -1,7 +1,7 @@
 Package: rmdTemplates
 Type: Package
 Title: A collection of Rmarkdown templates
-Version: 0.2
+Version: 0.2.1
 Date: 2014-11-13
 Author: F. Rodriguez-Sanchez <f.rodriguez.sanc@gmail.com>. Some templates taken
     or modified from other authors (C. Boettiger, J. Hollister..., thanks!!).
