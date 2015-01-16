@@ -1,39 +1,36 @@
 ---
-layout: preprint
-#layout: review, 11pt
 title: "my title"
+
 author: 
   - name: Your name
     affiliation: ebd
     email: your@email
     footnote: Corresponding author
+    
   - name: First Coauthor 
     affiliation: shortcode
 
 address: 
   - code: ebd
-    address: | 
-      institution,
-      address,
-      postcode and country 
+    address: institution, address, postcode and country 
   - code: shortcode
-    address: |
-      Full address of First Coauthor
+    address: Full address of First Coauthor
 
-abstract: | 
-          Write the abstract of the paper here
-
-
-bibliography: references.bib
-csl: skeleton/ecology.csl
-documentclass: skeleton/elsarticle
+documentclass: elsarticle
 
 output: 
   pdf_document:
-    template: skeleton/elsarticle.latex
+    template: elsarticle.latex
+    keep_tex: yes
+    fig_caption: yes
     toc: false
-    fig_caption: true
     
+bibliography: references.bib
+csl: ecology.csl
+
+abstract: | 
+          Write the abstract of the paper here
+          
 ---
 
 <!--
