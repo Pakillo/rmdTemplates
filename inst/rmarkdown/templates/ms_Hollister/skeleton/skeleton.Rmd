@@ -20,16 +20,16 @@ output:
     fig_caption: yes
     keep_tex: yes
     number_sections: yes
-    template: components/manuscript.latex
+    template: manuscript.latex
   html_document: null
   word_document: null
 fontsize: 11pt
 capsize: normalsize
-csl: components/ecology.csl
+csl: ecology.csl
 documentclass: article
 spacing: doublespacing
 linenumbers: no
-bibliography: components/manuscript.bib
+bibliography: manuscript.bib
 abstract: no
 ---
 <!--
