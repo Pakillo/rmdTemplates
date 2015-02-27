@@ -104,7 +104,7 @@ There is a chunk in the end to provide your session info at the end of the docum
 
 
 ```{r sessionInfo, cache=FALSE, echo=FALSE, eval=FALSE}
-sessionInfo()
+devtools::sessionInfo()
 ```
 
 

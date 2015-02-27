@@ -10,7 +10,6 @@ bibliography: references.bib
 
 output:
   html_document:
-    self_contained: true
     toc: false
     toc_depth: 2
     keep_md: false
@@ -111,7 +110,7 @@ There is a chunk in the end to provide your session info at the end of the docum
 
 
 ```{r sessionInfo, cache=FALSE, echo=FALSE, eval=FALSE}
-sessionInfo()
+devtools::sessionInfo()
 ```
 
 
