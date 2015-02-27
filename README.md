@@ -2,6 +2,12 @@
 
 An R package containing a collection of Rmarkdown templates. Includes helpful defaults for knitr options, as well as support for in-text citations and different bibliography styles. See [here](http://pakillo.github.io/Rmarkdown_talk_SevillaR_Nov2014/) for examples.
 
+To install the package:
+```{r}
+library(devtools)
+install_github("Pakillo/rmdTemplates")
+```
+
 After installing the package, click on `create new Rmarkdown document` in Rstudio
 to have access to the templates. 
 
