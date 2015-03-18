@@ -27,20 +27,20 @@ Summarise the paper in a short paragraph.
 
 ## Major comments
 
-* Major issue 1
-* Major issue 2
+- Major issue 1
+- Major issue 2
 
 
 ## Minor comments
 
-* Minor issue 1
-* Minor issue 2
+- Minor issue 1
+- Minor issue 2
 
 
 ## Typos and grammar
 
-* L34:
-* L123: 
+- L34:
+- L123: 
 
 
 
