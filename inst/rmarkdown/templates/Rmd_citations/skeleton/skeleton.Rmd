@@ -3,7 +3,7 @@ title: "My title"
 
 author: "Your name"
           
-date: "`r format(Sys.time(), '%d %B, %Y')`"
+date: "`r Sys.time()`"
 
 bibliography: references.bib
 #csl: bibliostyle.csl
@@ -11,7 +11,6 @@ bibliography: references.bib
 output:
   html_document:
     toc: false
-    toc_depth: 3
     keep_md: false
     fig_height: 7
     fig_width: 9
@@ -57,8 +56,8 @@ library(knitcitations)
 cleanbib()   
 cite_options(citation_format = "pandoc")
 
-if (file.exists("references.bib")) 
-  refs_from_file <- read.bibtex("references.bib", check=FALSE)
+if (file.exists("refs2import.bib")) 
+  refs_from_file <- read.bibtex("refs2import.bib", check=FALSE)
 
 ```
 
@@ -92,7 +91,7 @@ devtools::session_info()
 ## References
 
 ```{r generate_references, cache=FALSE, include=FALSE, results='hide'}
-write.bibtex(file="references.bib", append=file.exists("references.bib"))
+write.bibtex(file="references.bib")
 
 ```
 
