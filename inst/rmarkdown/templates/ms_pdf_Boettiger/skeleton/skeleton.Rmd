@@ -4,7 +4,7 @@ title: "my title"
 author: 
   - name: Your name
     affiliation: ebd
-    email: your@email
+    email: whatever
     footnote: Corresponding author
     
   - name: First Coauthor 
