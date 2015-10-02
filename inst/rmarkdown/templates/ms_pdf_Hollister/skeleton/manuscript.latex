@@ -98,7 +98,7 @@ $endif$
               unicode=false, % unicode breaks when used with xetex
               xetex]{hyperref}
 \else
-  \usepackage[unicode=true]{hyperref}
+  \usepackage[unicode=true, linktocpage=true]{hyperref}
 \fi
 \hypersetup{breaklinks=true,
             bookmarks=true,
