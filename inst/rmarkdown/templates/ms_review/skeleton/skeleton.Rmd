@@ -13,8 +13,8 @@ library(knitcitations)
 cleanbib()   
 cite_options(citation_format = "pandoc")
 
-if (file.exists("references.bib")) 
-  refs_from_file <- read.bibtex("references.bib", check=FALSE)
+if (file.exists("refs2import.bib")) 
+  refs <- read.bibtex("refs2import.bib", check=FALSE)
 
 ```
 
@@ -46,7 +46,7 @@ Summarise the paper in a short paragraph.
 
 ## References
 
-You can cite papers by doi `r citep("10.1098/rspb.2013.1372")` or keywords `r citep("Bascompte Jordano 2007 architecture")`. Use `citet` instead of `citep` for inline citations, e.g. `r citet("10.1098/rspb.2013.1372")`. Also, if you put a BibTeX file with references ("references.bib") in the working directory, you can cite any of them like these: @Boettiger_2013. 
+You can cite papers by doi `r citep("10.1098/rspb.2013.1372")` or keywords `r citep("Bascompte Jordano 2007 architecture")`. Use `citet` instead of `citep` for inline citations, e.g. `r citet("10.1098/rspb.2013.1372")`. Also, if you import a BibTeX file with references (e.g. "refs2import.bib"), you can cite any of them like these: `citep(refs["Boettiger_2013"])`. 
 
 
 ```{r generate_references, cache=FALSE, include=FALSE, results='hide'}

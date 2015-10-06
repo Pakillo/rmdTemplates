@@ -1,6 +1,6 @@
 ## Rmarkdown templates
 
-An R package containing a collection of Rmarkdown templates. Includes templates for writing scientific manuscripts, manuscript reviews, and generic Rmarkdown documents. Includes helpful defaults for knitr options, and support for citations and different bibliography styles. It also includes functions to embed data and Rmarkdown source files within the final HTML files. 
+An R package containing a collection of Rmarkdown templates. Includes templates for writing scientific manuscripts, manuscript reviews, and generic Rmarkdown documents. Includes helpful defaults for knitr options, and support for citations and different bibliography styles. It also includes functions to embed data and Rmarkdown source files within HTML files. 
 
 To install the package:
 ```{r}

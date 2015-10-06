@@ -57,7 +57,7 @@ cleanbib()
 cite_options(citation_format = "pandoc")
 
 if (file.exists("refs2import.bib")) 
-  refs_from_file <- read.bibtex("refs2import.bib", check=FALSE)
+  refs <- read.bibtex("refs2import.bib", check=FALSE)
 
 ```
 
@@ -75,9 +75,9 @@ cat("Hello world!")
 ```
 
 
-If you put a BibTeX file with references ("references.bib") in the working directory, you can cite any of them like these: @Xie_2013. Or cite by doi, e.g. `r citet("10.1098/rspb.2013.1372")`, thanks to `knitcitations` package `r citep(citation("knitcitations"))`. 
+You can import references from a BibTeX file and cite any of them like these: `citep(refs["Xie_2013"])`. Or cite by doi, e.g. `r citet("10.1098/rspb.2013.1372")`, thanks to `knitcitations` package `r citep(citation("knitcitations"))`. 
 
-You can even specifiy the desired format for your bibliography by including a style file ("bibliostyle.csl"). See [Rstudio website](http://rmarkdown.rstudio.com/authoring_bibliographies_and_citations.html) for more help. You can grab many different bibliography styles here: http://citationstyles.org/.
+You can even specifiy the desired format for your bibliography by including a style file (e.g. "bibliostyle.csl"). See [Rstudio website](http://rmarkdown.rstudio.com/authoring_bibliographies_and_citations.html) for more help. You can grab many different bibliography styles here: http://citationstyles.org/.
 
 There is a chunk in the end to provide your session info at the end of the document (useful for reproducibility). Set eval=FALSE if you don't want to include that info in your document.
 
