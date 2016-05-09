@@ -1,8 +1,8 @@
 Package: rmdTemplates
 Type: Package
 Title: A collection of Rmarkdown templates
-Version: 0.3.2
-Date: 2015-10-02
+Version: 0.4.0
+Date: 2016-05-09
 Author: F. Rodriguez-Sanchez <f.rodriguez.sanc@gmail.com>. Some templates taken
     or modified from other authors (C. Boettiger, J. Hollister..., thanks!!).
 Maintainer: F. Rodriguez-Sanchez <f.rodriguez.sanc@gmail.com>
@@ -15,6 +15,8 @@ Description: A collection of Rmarkdown templates. Includes templates for
     Rstudio to have access to the templates. See http://rmarkdown.rstudio.com/
     developer_document_templates.html for more information.
 License: CC0
+URL: https://github.com/Pakillo/rmdTemplates
+BugReports: https://github.com/Pakillo/rmdTemplates/issues
 Imports:
     base64enc,
     knitr,

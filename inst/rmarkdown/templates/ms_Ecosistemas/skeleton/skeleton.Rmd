@@ -1,0 +1,195 @@
+---
+title: "| Título en español \n| Title in English\n"
+  
+author: Nombre Apellidos^1^, Nombre Apellidos^2^
+  
+output:
+  word_document:
+    fig_caption: yes
+    fig_height: 6
+    fig_width: 7.5
+    highlight: null
+    reference_docx: Ecosistemas_template.docx
+    
+csl: ecosistemas.csl
+#bibliography: references.bib
+---
+
+
+> (1) Dirección del primer autor.
+
+> (2) Dirección del segundo autor.
+
+> Autor para correspondencia: Nombre Apellidos [minombre@micorreo.com]
+
+
+
+
+# Resumen
+
+> **Título en español**. En el resumen debe constar el propósito del artículo, una síntesis de la metodología utilizada y de los resultados más relevantes obtenidos y sus implicaciones. El resumen debe tener una extensión máxima de 250 palabras, incluyendo, en la primera línea, el título del artículo. Es obligatorio la presentación de un resumen en inglés además del resumen en castellano. Letra Arial 10 y espaciado de 1 línea. Las comunicaciones breves tendrán igualmente un resumen en castellano y en inglés pero la extensión del mismo será de 150 palabras máximo. Únicamente están exentos de aportar resumen las contribuciones enviadas a las secciones de Resúmenes de tesis, Notas y Reseñas bibliográficas.
+
+
+# Abstract
+
+> **Title in English**. En el resumen debe constar el propósito del artículo, una síntesis de la metodología utilizada y de los resultados más relevantes obtenidos y sus implicaciones. El resumen debe tener una extensión máxima de 250 palabras, incluyendo, en la primera línea, el título del artículo. Es obligatorio la presentación de un resumen en inglés además del resumen en castellano. Letra Arial 10 y espaciado de 1 línea. Las comunicaciones breves tendrán igualmente un resumen en castellano y en inglés pero la extensión del mismo será de 150 palabras máximo. Únicamente están exentos de aportar resumen las contribuciones enviadas a las secciones de Resúmenes de tesis, Notas y Reseñas bibliográficas.
+
+
+# Palabras clave
+
+> palabra1; palabra2; palabra3; palabra4 
+
+
+# Keywords
+
+> keyword1; keyword2; keyword3; keyword4
+
+
+# Introducción 
+
+Esta es una plantilla para escribir artículos en formato Rmarkdown para la revista [Ecosistemas](www.revistaecosistemas.net). Para saber más sobre Rmarkdown, visite rmarkdown.rstudio.com. Para ver un ejemplo de manuscrito escrito íntegramente en Rmarkdown, visite https://github.com/ecoinfAEET/Reproducibilidad/blob/master/Repro_ms.Rmd.
+
+Los artículos de investigación contendrán típicamente las siguientes secciones: Introducción, Material y métodos, Resultados, Discusión, Conclusiones. Los artículos de revisión, las comunicaciones breves y los resúmenes de tesis no tienen por qué seguir estas normas. El resto de contribuciones normalmente no requieren de secciones. Los autores pueden crear secciones de segundo orden dentro de cada sección.
+
+El grueso del texto en Letra Arial 10 y espaciado de 1.5 líneas con una línea en blanco entre párrafos y comienzo de párrafo no tabulado. Las referencias a figuras y tablas deben ser resaltadas en negrita e iniciadas con mayúscula. Si son citadas explícitamente se utilizará Figura X o Tabla X, de lo contrario se citará entre paréntesis y en el caso de las figuras se abreviará (Fig. X).
+
+Las secciones no deben numerarse. El nombre de una sección de primer orden irá en línea aparte, con Letra Arial 11 y en negrita. El nombre de una sección de segundo orden irá en línea aparte, con Letra Arial 10 y negrita.
+ 
+
+# Métodos
+
+Texto.
+
+
+
+
+# Resultados
+
+Esta sección está dividida en subsecciones.
+
+
+## Subsección 1
+
+Texto.
+
+
+## Subsección 2
+
+Texto.
+
+
+## Subsección 3
+
+Texto.
+
+
+
+# Discusión
+
+Texto.
+
+
+
+# Conclusiones
+
+Texto.
+
+
+# Agradecimientos
+
+Agradecimientos.
+
+
+
+# Referencias
+
+Aquí va la lista de referencias citadas.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+###### TABLA 1
+
+**Tabla 1**. Cada tabla debe aportar su correspondiente encabezamiento explicativo. En los Artículos de investigación, de revisión y Comunicaciones breves se aportarán los encabezamientos tanto en castellano como en inglés, en letra Arial 10 y en página independiente. Es importante que sean simples y que no superen el ancho una página DIN A4 vertical. Los originales se deben aportar en formato tabla y no en formato imagen. 
+
+**Table 1**. Table heading in English. 
+
+
+
+
+
+###### TABLA 2
+
+**Tabla 2**. Cada tabla debe aportar su correspondiente encabezamiento explicativo. En los Artículos de investigación, de revisión y Comunicaciones breves se aportarán los encabezamientos tanto en castellano como en inglés, en letra Arial 10 y en página independiente. Es importante que sean simples y que no superen el ancho una página DIN A4 vertical. Los originales se deben aportar en formato tabla y no en formato imagen. 
+
+**Table 2**. Table heading in English. 
+
+
+
+
+
+
+
+###### PIES DE FIGURA
+
+**Figura 1**. Pie de figura 1. 
+
+**Figura 2**. Pie de figura 2.
+
+
+
+
+
+###### FIGURE LEGENDS
+
+**Figure 1**. Figure caption.
+
+**Figure 2**. Figure caption.
+
+
+
+
+
+###### FIGURA 1
+
+```{r Fig1, eval=FALSE, echo=FALSE, fig.cap="This is Figure 1."}
+library(knitr)
+include_graphics("figures/Figure1.png")
+```
+
+
+###### FIGURA 2
+
+```{r Fig2, eval=FALSE, echo=FALSE, fig.cap="This is Figure 2."}
+include_graphics("figures/Figure2.png")
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
