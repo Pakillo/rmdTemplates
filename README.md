@@ -12,7 +12,7 @@ library(devtools)
 install_github("Pakillo/rmdTemplates")
 ```
 
-If using Windows and being unable to build packages from source, you can download and install the binary package from here: 
+If using Windows and being unable to build packages from source, you can download and install the binary package from here: https://github.com/Pakillo/rmdTemplates/releases/latest.
 
 
 ### Usage
