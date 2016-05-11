@@ -46,7 +46,9 @@ linenumbers: yes
 spacing: doublespacing
 footerdate: yes
 abstract: no
-bibliography: ["references.bib", "knitcitations.bib"]
+bibliography: 
+  - references.bib
+  - knitcitations.bib
 csl: ecology.csl
 
 ---
@@ -76,7 +78,7 @@ opts_chunk$set(fig.path = "output/figures/")
 ```
 
 
-```{r knitcitations}
+```{r knitcitations, echo=FALSE, cache = FALSE}
 library(knitcitations)
 cleanbib()   
 cite_options(citation_format = "pandoc")
@@ -91,7 +93,7 @@ Write your abstract here.
 
 \vspace{3mm}\hrule
 
-*Keywords*: 
+*Keywords*: rmarkdown, reproducible science
 
 \doublespace
 
@@ -100,7 +102,9 @@ Write your abstract here.
 
 # INTRODUCTION
 
-Write your introduction here. You can cite bibliography like this [@Yan2011; @Sutherland2011] if you provide a `BibTeX` file with references. See http://rmarkdown.rstudio.com/authoring_bibliographies_and_citations.html for more information. Or you could also use [knitcitations](https://cran.r-project.org/web/packages/knitcitations/index.html) or [RefManageR](https://cran.r-project.org/web/packages/RefManageR/index.html) to fetch bibliographic metadata automatically from the web.
+Write your introduction here. You can cite bibliography like this [@Yan2011; @Sutherland2011], if you provide a `BibTeX` file with references. See http://rmarkdown.rstudio.com/authoring_bibliographies_and_citations.html for more information. Or you could also use [knitcitations](https://cran.r-project.org/web/packages/knitcitations/index.html) or [RefManageR](https://cran.r-project.org/web/packages/RefManageR/index.html) to fetch bibliographic metadata automatically from the web. For example, citing a paper can be as easy as providing its DOI `r citep("10.1016/j.tree.2006.03.016")` or even just a few keywords `r citep("Ricklefs 2008 American Naturalist")`. They will then automagically appear in the list of cited references.
+
+You can even specifiy the desired output format for your bibliography by including a style file for a specific journal (e.g. "ecology.csl"). Many different bibliography styles (CSL files) can be obtained at http://citationstyles.org/ or https://github.com/citation-style-language/styles.
 
 
 
@@ -128,14 +132,14 @@ $$
 model <- lm(y ~ x)
 ```
 
-We used the statistical language `R` `r citep(citation())` for all our analyses. All the multilevel models were fitted with `lme4` `r citep(citation("lme4"))`.
+We used the statistical language `R` `r citep(citation())` for all our analyses. These were implemented in dynamic rmarkdown documents using `knitr` `r citep(citation("knitr"))` and `rmarkdown` `r citep(citation("rmarkdown"))` packages. All the multilevel models were fitted with `lme4` `r citep(citation("lme4"))`. 
 
 
 
 
 # RESULTS
 
-Trees in forest A grew taller than those in forest B (mean height: `r mean(25, 31, 28)` versus `r mean(13, 19, 16)`). And many more cool results that get updated dynamically.
+Trees in forest A grew taller than those in forest B (mean height: `r mean(25, 31, 28)` versus `r mean(13, 19, 16)` m). And many more cool results that get updated dynamically.
 
 
 
