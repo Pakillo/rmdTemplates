@@ -12,7 +12,9 @@ output:
     reference_docx: Ecosistemas_template.docx
     
 csl: ecosistemas.csl
-#bibliography: references.bib
+bibliography: 
+  - references.bib
+  - knitcitations.bib
 ---
 
 
@@ -45,20 +47,48 @@ csl: ecosistemas.csl
 > keyword1; keyword2; keyword3; keyword4
 
 
+
+```{r knitcitations, echo=FALSE, cache = FALSE}
+library(knitcitations)
+cleanbib()   
+cite_options(citation_format = "pandoc")
+```
+
+
+
 # Introducción 
 
-Esta es una plantilla para escribir artículos en formato Rmarkdown para la revista [Ecosistemas](www.revistaecosistemas.net). Para saber más sobre Rmarkdown, visite rmarkdown.rstudio.com. Para ver un ejemplo de manuscrito escrito íntegramente en Rmarkdown, visite https://github.com/ecoinfAEET/Reproducibilidad/blob/master/Repro_ms.Rmd.
+Esta es una plantilla para escribir artículos en formato Rmarkdown para la revista [Ecosistemas](www.revistaecosistemas.net). Para saber más sobre Rmarkdown, visite http://rmarkdown.rstudio.com. Para ver un ejemplo de manuscrito escrito íntegramente en Rmarkdown, visite https://github.com/ecoinfAEET/Reproducibilidad/blob/master/Repro_ms.Rmd.
 
-Los artículos de investigación contendrán típicamente las siguientes secciones: Introducción, Material y métodos, Resultados, Discusión, Conclusiones. Los artículos de revisión, las comunicaciones breves y los resúmenes de tesis no tienen por qué seguir estas normas. El resto de contribuciones normalmente no requieren de secciones. Los autores pueden crear secciones de segundo orden dentro de cada sección.
+Hay varias formas de citar bibliografía (véase http://rmarkdown.rstudio.com/authoring_bibliographies_and_citations.html). Una de ellas requiere simplemente adjuntar un fichero BibTex con todas las referencias, y citar cada una de ellas usando su 'CitationKey' [e.g. @Yan2011; @Sutherland2011]. También pueden utilizarse paquetes como [knitcitations](https://cran.r-project.org/web/packages/knitcitations/index.html) o [RefManageR](https://cran.r-project.org/web/packages/RefManageR/index.html) para obtener automáticamente la información bibliográfica de internet. Por ejemplo, para citar un artículo es tan fácil como escribir su DOI `r citep("10.1016/j.tree.2006.03.016")` o incluso solo algunas palabras claves `r citep("Ricklefs 2008 American Naturalist")`. Estos artículos aparecerán automágicamente en la lista de referencias citadas. 
 
-El grueso del texto en Letra Arial 10 y espaciado de 1.5 líneas con una línea en blanco entre párrafos y comienzo de párrafo no tabulado. Las referencias a figuras y tablas deben ser resaltadas en negrita e iniciadas con mayúscula. Si son citadas explícitamente se utilizará Figura X o Tabla X, de lo contrario se citará entre paréntesis y en el caso de las figuras se abreviará (Fig. X).
 
-Las secciones no deben numerarse. El nombre de una sección de primer orden irá en línea aparte, con Letra Arial 11 y en negrita. El nombre de una sección de segundo orden irá en línea aparte, con Letra Arial 10 y negrita.
  
 
 # Métodos
 
-Texto.
+## Área de estudio
+
+Nuestro estudio tuvo lugar en un bosque dominado por *Quercus suber* y *Laurus nobilis*.
+
+
+## Análisis de datos
+
+```{r read_data, eval = FALSE, echo = FALSE}
+dataset <- read.csv("mydata.csv")
+```
+
+Ajustamos un modelo lineal:
+
+$$
+y_{i} = \alpha + \beta*x_{i} 
+$$
+
+```{r model, echo = FALSE, eval = FALSE}
+model <- lm(y ~ x)
+```
+
+Utilizamos R `r citep(citation())` y Rmarkdown `r citep(list(citation("knitr"), citation("rmarkdown")))` para todos nuestros análisis. Para ajustar los modelos mixtos utilizamos `lme4` `r citep(citation("lme4"))`.
 
 
 
@@ -70,7 +100,7 @@ Esta sección está dividida en subsecciones.
 
 ## Subsección 1
 
-Texto.
+Los árboles de la parcela A fueron más altos que en la parcela B (altura media: `r mean(25, 31, 28)` vs `r mean(13, 19, 16)` m). Y muchos más resultados que se actualizan dinámicamente.
 
 
 ## Subsección 2
@@ -103,7 +133,7 @@ Agradecimientos.
 
 # Referencias
 
-Aquí va la lista de referencias citadas.
+Aquí va la lista de referencias citadas (moverla desde el final del documento).
 
 
 
@@ -124,17 +154,10 @@ Aquí va la lista de referencias citadas.
 
 **Table 1**. Table heading in English. 
 
-
-
-
-
-###### TABLA 2
-
-**Tabla 2**. Cada tabla debe aportar su correspondiente encabezamiento explicativo. En los Artículos de investigación, de revisión y Comunicaciones breves se aportarán los encabezamientos tanto en castellano como en inglés, en letra Arial 10 y en página independiente. Es importante que sean simples y que no superen el ancho una página DIN A4 vertical. Los originales se deben aportar en formato tabla y no en formato imagen. 
-
-**Table 2**. Table heading in English. 
-
-
+```{r Tabla1, results='asis', echo=FALSE, cache=FALSE}
+library("knitr")
+kable(head(iris))
+```
 
 
 
@@ -162,23 +185,28 @@ Aquí va la lista de referencias citadas.
 
 ###### FIGURA 1
 
-```{r Fig1, eval=FALSE, echo=FALSE, fig.cap="This is Figure 1."}
-library(knitr)
-include_graphics("figures/Figure1.png")
+```{r Fig1, echo=FALSE, fig.cap="Figura 1. Esto es un ejemplo.", cache=FALSE}
+x <- rnorm(100)
+y <- jitter(x, 1000)
+plot(x, y)
 ```
+
 
 
 ###### FIGURA 2
 
-```{r Fig2, eval=FALSE, echo=FALSE, fig.cap="This is Figure 2."}
-include_graphics("figures/Figure2.png")
+```{r Fig2, echo=FALSE, fig.cap="Figura 2. Segundo ejemplo", cache=FALSE}
+a <- sort(rnorm(100))
+b <- c(rep("Group Small", 35), rep("Group Big", 65))
+boxplot(a ~ b)
 ```
 
 
+###### REFERENCIAS
 
-
-
-
+```{r write_citations, cache=FALSE, include=FALSE}
+write.bibtex(file="knitcitations.bib")
+```
 
 
 
