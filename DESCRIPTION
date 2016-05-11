@@ -1,16 +1,15 @@
 Package: rmdTemplates
 Type: Package
 Title: A collection of Rmarkdown templates
-Version: 0.4.1
-Date: 2016-05-11
-Author: F. Rodriguez-Sanchez <f.rodriguez.sanc@gmail.com>. Some templates taken
-    or modified from other authors (C. Boettiger, J. Hollister..., thanks!!).
+Version: 0.4.2
+Date: 2016-05-12
+Author: F. Rodriguez-Sanchez <f.rodriguez.sanc@gmail.com>. Some templates 
+    modified from original templates by Carl Boettiger and Jeff Hollister.
 Maintainer: F. Rodriguez-Sanchez <f.rodriguez.sanc@gmail.com>
-Description: A collection of Rmarkdown templates. Includes templates for
-    writing scientific manuscripts, manuscript reviews, and generic Rmarkdown
-    documents. Includes helpful defaults for knitr options, and support for
-    citations and different bibliography styles. It also includes functions
-    to embed data and Rmarkdown source files within the final HTML files.
+Description: A collection of Rmarkdown templates. Includes templates for 
+    writing scientific manuscripts, manuscript reviews, and other Rmarkdown documents, 
+    with support for citations and different bibliography styles. It also includes 
+    functions to embed data and Rmarkdown source files within HTML files. 
     After installing the package, click on `create new Rmarkdown document` in
     Rstudio to have access to the templates. See http://rmarkdown.rstudio.com/
     developer_document_templates.html for more information.
