@@ -45,6 +45,7 @@ fontsize: 11pt
 geometry: margin=1in
 linenumbers: yes
 spacing: doublespacing
+footerdate: yes
 abstract: no
 bibliography: references.bib
 csl: ecology.csl
