@@ -1,0 +1,4 @@
+name: ms_pdf
+description: >
+  Template for writing scientific manuscripts (preferred output PDF), modified from Jeff Hollister's manuscriptPackage.
+create_dir: true

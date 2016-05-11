@@ -1,3 +1,9 @@
+rmdTemplates 0.4.1
+==================
+
+* Modified substantially ms_pdf_Hollister template (now called simply ms_pdf) to include equations, landscape figures, etc.
+
+
 rmdTemplates 0.4
 ==================
 

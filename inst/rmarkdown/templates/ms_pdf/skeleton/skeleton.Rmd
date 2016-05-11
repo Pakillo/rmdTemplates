@@ -1,0 +1,220 @@
+---
+title: 'A template for writing manuscripts in Rmarkdown'
+
+author:  
+
+- name: Jeffrey W. Hollister
+  affilnum: '1,2'
+  
+- name: Francisco Rodriguez-Sanchez 
+  affilnum: 3
+  email: f.rodriguez.sanc@gmail.com
+  
+affiliation:
+
+- affilnum: 1
+  affil: US Environmental Protection Agency, Office of Research and Development, National Health and Environmental Effects Research Laboratory, Atlantic Ecology Division, 27 Tarzwell Drive  Narragansett, RI, 02882, USA
+  
+- affilnum: 2
+  affil: Big Name University, Department of R, City, BN, 01020, USA
+  
+- affilnum: 3
+  affil: Estacion Biologica de Donana (EBD-CSIC), E-41092 Sevilla, Spain
+  
+output:
+
+  pdf_document:
+    fig_caption: yes
+    fig_width: 7
+    fig_height: 7
+    keep_tex: yes
+    number_sections: no
+    template: manuscript.latex
+    includes:
+      in_header: header.tex
+
+  html_document: null
+  
+  word_document: null
+
+documentclass: article
+classoption: a4paper
+capsize: normalsize
+fontsize: 11pt
+geometry: margin=1in
+linenumbers: yes
+spacing: doublespacing
+footerdate: yes
+abstract: no
+bibliography: ["references.bib", "knitcitations.bib"]
+csl: ecology.csl
+
+---
+
+
+```{r setup, include=FALSE, cache=FALSE, message = FALSE}
+
+library("knitr")
+
+#opts_knit$set(root.dir=normalizePath('../'))
+
+### Chunk options: see http://yihui.name/knitr/options/ ###
+
+## Text results
+opts_chunk$set(echo = TRUE, warning = TRUE, message = TRUE, include = TRUE)
+
+## Code decoration
+opts_chunk$set(tidy = TRUE, comment = NA, highlight = TRUE)
+
+## Cache
+opts_chunk$set(cache = 2, cache.path = "output/cache/")
+
+## Plots
+opts_chunk$set(fig.path = "output/figures/")
+
+
+```
+
+
+```{r knitcitations}
+library(knitcitations)
+cleanbib()   
+cite_options(citation_format = "pandoc")
+```
+
+
+\singlespace
+
+\vspace{2mm}\hrule
+
+Write your abstract here.
+
+\vspace{3mm}\hrule
+
+*Keywords*: 
+
+\doublespace
+
+\bleft
+
+
+# INTRODUCTION
+
+Write your introduction here. You can cite bibliography like this [@Yan2011; @Sutherland2011] if you provide a `BibTeX` file with references. See http://rmarkdown.rstudio.com/authoring_bibliographies_and_citations.html for more information. Or you could also use [knitcitations](https://cran.r-project.org/web/packages/knitcitations/index.html) or [RefManageR](https://cran.r-project.org/web/packages/RefManageR/index.html) to fetch bibliographic metadata automatically from the web.
+
+
+
+# METHODS
+
+
+## Study Area
+
+We worked in a **beautiful** place with lots of trees, like *Quercus suber* and *Laurus nobilis*.
+
+
+## Data collection and analysis
+
+```{r read_data, eval = FALSE, echo = FALSE}
+dataset <- read.csv("mydata.csv")
+```
+
+We applied a linear model where
+
+$$
+y_{i} = \alpha + \beta*x_{i} 
+$$
+
+```{r model, echo = FALSE, eval = FALSE}
+model <- lm(y ~ x)
+```
+
+We used the statistical language `R` `r citep(citation())` for all our analyses. All the multilevel models were fitted with `lme4` `r citep(citation("lme4"))`.
+
+
+
+
+# RESULTS
+
+Trees in forest A grew taller than those in forest B (mean height: `r mean(25, 31, 28)` versus `r mean(13, 19, 16)`). And many more cool results that get updated dynamically.
+
+
+
+
+# DISCUSSION
+
+Discuss.
+
+
+
+# CONCLUSIONS
+
+
+
+# ACKNOWLEDGEMENTS
+
+
+\eleft
+
+\clearpage
+
+\listoftables
+
+
+\newpage
+
+```{r Table1, results='asis', echo=FALSE, cache=FALSE}
+kable(head(iris), caption = "A glimpse of the famous *Iris* dataset.")
+```
+
+
+\newpage
+
+```{r Table2, results='asis', echo=FALSE, cache=FALSE}
+kable(mtcars[10:16, ], caption = "Now a subset of mtcars dataset.")
+```
+
+
+\clearpage
+
+\listoffigures
+
+
+\newpage
+
+```{r Fig1, echo=FALSE, fig.cap="Just my first figure with a very fantastic caption.", cache=FALSE}
+x <- rnorm(100)
+y <- jitter(x, 1000)
+plot(x, y)
+```
+
+\newpage
+
+\blandscape
+
+```{r Fig2, echo=FALSE, fig.cap="Second figure in landscape format.", cache=FALSE}
+a <- sort(rnorm(100))
+b <- c(rep("Group Small", 35), rep("Group Big", 65))
+boxplot(a ~ b)
+```
+
+\elandscape
+
+\clearpage
+
+
+
+
+# REFERENCES
+
+If you need references to appear **before** tables and figures, modify the TeX document directly (after knitting this Rmd document), to place reference list in the appropriate place.
+
+```{r write_citations, cache=FALSE, include=FALSE}
+write.bibtex(file="knitcitations.bib")
+```
+
+
+```{r sessioninfo, echo = FALSE, eval = FALSE}
+# set eval = FALSE if you don't want this info (useful for reproducibility) to appear 
+sessionInfo()
+```
+
