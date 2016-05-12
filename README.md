@@ -2,6 +2,9 @@
 
 [![DOI](https://zenodo.org/badge/doi/10.5281/zenodo.51346.svg)](http://dx.doi.org/10.5281/zenodo.51346)
 
+[![Travis-CI Build Status](https://travis-ci.org/Pakillo/rmdTemplates.svg?branch=master)](https://travis-ci.org/Pakillo/rmdTemplates)
+
+
 An R package containing a collection of Rmarkdown templates. Includes templates for writing scientific manuscripts, manuscript reviews, and other Rmarkdown documents, with support for citations and different bibliography styles. It also includes functions to embed data and Rmarkdown source files within HTML files. 
 
 
