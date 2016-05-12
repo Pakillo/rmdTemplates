@@ -4,7 +4,7 @@
 \alias{embed_rmd_html}
 \title{Embed Rmarkdown source code in the output HTML file.}
 \source{
-\link{http://rpubs.com/ramnathv/including_rmd_source}
+\url{http://rpubs.com/ramnathv/including_rmd_source}
 }
 \usage{
 embed_rmd_html(file)

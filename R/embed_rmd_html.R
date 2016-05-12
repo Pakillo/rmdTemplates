@@ -4,7 +4,7 @@
 #' 
 #' @export
 #' @author Ramnath Vaidyanathan, slightly modified by F. Rodriguez-Sanchez.
-#' @source \link{http://rpubs.com/ramnathv/including_rmd_source}
+#' @source \url{http://rpubs.com/ramnathv/including_rmd_source}
 #' @importFrom base64enc dataURI
 #' @param file Character. Name of the Rmarkdown source file (within quotes), e.g. 'myreport.Rmd'
 #'

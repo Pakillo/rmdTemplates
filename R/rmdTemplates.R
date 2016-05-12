@@ -3,7 +3,7 @@
 #' 
 #' After installing the package, click on `create new Rmarkdown document` in Rstudio
 #' to have access to the templates. 
-#' See \link{http://rmarkdown.rstudio.com/developer_document_templates.html} for 
+#' See \url{http://rmarkdown.rstudio.com/developer_document_templates.html} for 
 #' more information.
 #' 
 #'

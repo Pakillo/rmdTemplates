@@ -4,7 +4,7 @@
 \alias{embed_data_html}
 \title{Embed R data in HTML file}
 \source{
-\link{http://bayesfactor.blogspot.com.es/2014/09/embedding-rdata-files-in-rmarkdown.html}
+\url{http://bayesfactor.blogspot.com.es/2014/09/embedding-rdata-files-in-rmarkdown.html}
 }
 \usage{
 embed_data_html(dataset, textHTML = "Click here to download the data")

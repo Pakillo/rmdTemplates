@@ -4,7 +4,7 @@
 #' 
 #' @export
 #' @author Richard Morey, slightly modified by F. Rodriguez-Sanchez.
-#' @source \link{http://bayesfactor.blogspot.com.es/2014/09/embedding-rdata-files-in-rmarkdown.html}
+#' @source \url{http://bayesfactor.blogspot.com.es/2014/09/embedding-rdata-files-in-rmarkdown.html}
 #' @importFrom base64enc dataURI
 #' @param dataset Character (required). Name of the dataset (RData or rda file) to be embedded in the HTML file (skipping the extension, i.e. rda or Rdata). 
 #' Must be included within quotes.
