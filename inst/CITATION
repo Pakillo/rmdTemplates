@@ -1,0 +1,14 @@
+
+citHeader("If you use any of these templates and want to cite them in publications, please use:")
+
+citEntry(entry = "manual",
+  author = personList(as.person("Francisco Rodriguez-Sanchez"),
+                   as.person("Jeffrey W Hollister"),
+                   as.person("Carl Boettiger")),
+  title = "rmdTemplates: a collection of Rmarkdown templates",
+  year = "2016",
+  note = "R package version 0.4.3",
+  url = "http://dx.doi.org/10.5281/zenodo.51346",
+  
+  textVersion = "F. Rodriguez-Sanchez, J.W. Hollister, C. Boettiger (2016) rmdTemplates: a collection of Rmarkdown templates. http://dx.doi.org/10.5281/zenodo.51346."
+)
