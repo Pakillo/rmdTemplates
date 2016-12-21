@@ -1,0 +1,63 @@
+---
+title: "Beamer PDF slides with metropolis theme"
+author: "name"
+date: "today"
+fontsize: 9pt
+output:
+  beamer_presentation: 
+    df_print: kable
+    fig_caption: no
+    fig_height: 3
+    fig_width: 4
+    includes:
+      in_header: header.tex
+    latex_engine: pdflatex
+    slide_level: 2
+    theme: metropolis
+---
+
+
+```{r knitr_setup, include=FALSE, cache=FALSE}
+
+library(knitr)
+
+### Chunk options ###
+
+## Text results
+opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE, eval = TRUE, size = 'footnotesize')
+
+## Code decoration
+opts_chunk$set(tidy = FALSE, comment = NA, highlight = TRUE, prompt = FALSE, crop = TRUE)
+
+# ## Cache
+# opts_chunk$set(cache = TRUE, cache.path = "knitr_output/cache/")
+
+# ## Plots
+# opts_chunk$set(fig.path = "knitr_output/figures/")
+opts_chunk$set(fig.align = 'center')
+
+### Hooks ###
+## Crop plot margins
+knit_hooks$set(crop = hook_pdfcrop)
+
+## Reduce font size
+## use smallfont = TRUE as chunk option to reduce font size
+# see http://stackoverflow.com/a/39961605
+knit_hooks$set(smallfont = function(before, options, envir) {
+  if (before) return(paste0("\n \\", options$size, "\n\n"))
+  else return("\n\n \\normalsize \n")
+  })
+
+```
+
+
+# New section
+
+## New slide
+
+Fill **in** with *content*:
+
+- text
+- code chunks
+- images
+

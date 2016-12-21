@@ -1,0 +1,4 @@
+name: beamer_metropolis
+description: >
+  Beamer slides (PDF) with metropolis theme
+create_dir: true

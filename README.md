@@ -5,7 +5,7 @@
 [![Travis-CI Build Status](https://travis-ci.org/Pakillo/rmdTemplates.svg?branch=master)](https://travis-ci.org/Pakillo/rmdTemplates)
 
 
-An R package containing a collection of Rmarkdown templates. Includes templates for writing scientific manuscripts, manuscript reviews, and other Rmarkdown documents, with support for citations and different bibliography styles. It also includes functions to embed data and Rmarkdown source files within HTML files. 
+An R package containing a collection of Rmarkdown templates. Includes templates for writing scientific manuscripts, manuscript reviews, and other Rmarkdown documents, with support for citations and different bibliography styles. It also includes functions to embed data and Rmarkdown source files within HTML files. And a template for producing beamer (PDF) slides with metropolis theme.
 
 
 ### Installation
