@@ -34,7 +34,7 @@ opts_chunk$set(tidy = FALSE, comment = NA, highlight = TRUE, prompt = FALSE, cro
 
 # ## Plots
 # opts_chunk$set(fig.path = "knitr_output/figures/")
-opts_chunk$set(fig.align = 'center')
+opts_chunk$set(fig.align = 'center', out.width = '4in', out.height = '3in')
 
 ### Hooks ###
 ## Crop plot margins
@@ -57,7 +57,8 @@ knit_hooks$set(smallfont = function(before, options, envir) {
 
 Fill **in** with *content*:
 
-- text
+- text text text
 - code chunks
-- images
+- images (use `knitr::include_graphics`)
+
 
