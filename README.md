@@ -27,7 +27,7 @@ to have access to the templates.
 
 ![](https://sites.google.com/site/rodriguezsanchezf/news/writingpapersinrmarkdown/NewRmarkdown.PNG?attredirects=0)
 
-See http://rmarkdown.rstudio.com/developer_document_templates.html for 
+See [Writing papers in Rmarkdown](https://sites.google.com/site/rodriguezsanchezf/news/writingpapersinrmarkdown) and http://rmarkdown.rstudio.com/developer_document_templates.html for 
 more information.
 
 
