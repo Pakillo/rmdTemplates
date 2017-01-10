@@ -25,7 +25,7 @@ If using Windows and being unable to build packages from source, you can downloa
 After installing the package, click on `create new Rmarkdown document` in Rstudio
 to have access to the templates. 
 
-![](http://rmarkdown.rstudio.com/images/new_r_markdown.png)
+![](https://sites.google.com/site/rodriguezsanchezf/news/writingpapersinrmarkdown/NewRmarkdown.PNG?attredirects=0)
 
 See http://rmarkdown.rstudio.com/developer_document_templates.html for 
 more information.
