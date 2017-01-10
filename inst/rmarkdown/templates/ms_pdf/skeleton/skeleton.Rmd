@@ -157,9 +157,20 @@ Discuss.
 # ACKNOWLEDGEMENTS
 
 
+
+# REFERENCES
+
+```{r write_citations, cache=FALSE, include=FALSE}
+write.bibtex(file="knitcitations.bib")
+```
+
+<div id = "refs"></div>
+
+
 \eleft
 
 \clearpage
+
 
 \listoftables
 
@@ -205,16 +216,6 @@ boxplot(a ~ b)
 
 \clearpage
 
-
-
-
-# REFERENCES
-
-If you need references to appear **before** tables and figures, modify the TeX document directly (after knitting this Rmd document), to place reference list in the appropriate place.
-
-```{r write_citations, cache=FALSE, include=FALSE}
-write.bibtex(file="knitcitations.bib")
-```
 
 
 ```{r sessioninfo, echo = FALSE, eval = FALSE}
