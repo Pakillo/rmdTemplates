@@ -18,4 +18,3 @@ This function generates HTML code to encode the Rmarkdown source code within the
 \author{
 Ramnath Vaidyanathan, slightly modified by F. Rodriguez-Sanchez.
 }
-

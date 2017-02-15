@@ -131,9 +131,15 @@ Agradecimientos.
 
 
 
-# Referencias
 
-Aquí va la lista de referencias citadas (moverla desde el final del documento).
+
+###### REFERENCIAS
+
+```{r write_citations, cache=FALSE, include=FALSE}
+write.bibtex(file="knitcitations.bib")
+```
+
+<div id = "refs"></div>
 
 
 
@@ -200,18 +206,6 @@ a <- sort(rnorm(100))
 b <- c(rep("Group Small", 35), rep("Group Big", 65))
 boxplot(a ~ b)
 ```
-
-
-###### REFERENCIAS
-
-```{r write_citations, cache=FALSE, include=FALSE}
-write.bibtex(file="knitcitations.bib")
-```
-
-
-
-
-
 
 
 

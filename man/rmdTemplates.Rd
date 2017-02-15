@@ -19,4 +19,3 @@ more information.
 F. Rodriguez-Sanchez \email{f.rodriguez.sanc@gmail.com}
 }
 \keyword{package}
-

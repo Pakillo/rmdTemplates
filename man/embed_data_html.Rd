@@ -21,4 +21,3 @@ This function generates HTML code to encode an RData/rda file within the HTML fi
 \author{
 Richard Morey, slightly modified by F. Rodriguez-Sanchez.
 }
-
