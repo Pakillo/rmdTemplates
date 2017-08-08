@@ -1,23 +1,10 @@
 ---
 title: "Review of ..."
 author: "Your name"
-date: "`r format(Sys.time(), '%d %B %Y')`"
+date: "`r Sys.Date()`"
 output: pdf_document
-bibliography: references.bib
+#bibliography: references.bib
 ---
-
-
-```{r citations_setup, include=FALSE, cache=FALSE}
-
-library(knitcitations)
-cleanbib()   
-cite_options(citation_format = "pandoc")
-
-if (file.exists("refs2import.bib")) 
-  refs <- read.bibtex("refs2import.bib", check=FALSE)
-
-```
-
 
 
 ## General summary
@@ -46,12 +33,8 @@ Summarise the paper in a short paragraph.
 
 ## References
 
-You can cite papers by doi `r citep("10.1098/rspb.2013.1372")` or keywords `r citep("Bascompte Jordano 2007 architecture")`. Use `citet` instead of `citep` for inline citations, e.g. `r citet("10.1098/rspb.2013.1372")`. Also, if you import a BibTeX file with references (e.g. "refs2import.bib"), you can cite any of them like these: `citep(refs["Boettiger_2013"])`. 
+You can use `rcrossref` addin to get reference metadata through their DOI, or provide a bibtex file with references, and cite them like this: `[@Rodriguez-Sanchez2017]`. See http://rmarkdown.rstudio.com/authoring_bibliographies_and_citations.html for more information. 
 
-
-```{r generate_references, cache=FALSE, include=FALSE, results='hide'}
-write.bibtex(file="references.bib")
-```
 
 
 
