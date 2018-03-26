@@ -10,8 +10,8 @@ Description: A collection of Rmarkdown templates. Includes templates for
     with support for citations and different bibliography styles. It also includes 
     functions to embed data and Rmarkdown source files within HTML files. 
     After installing the package, click on `create new Rmarkdown document` in
-    Rstudio to have access to the templates. See http://rmarkdown.rstudio.com/
-    developer_document_templates.html for more information.
+    Rstudio to have access to the templates. See https://rmarkdown.rstudio.com/
+    for more information.
 License: CC0
 URL: https://github.com/Pakillo/rmdTemplates
 BugReports: https://github.com/Pakillo/rmdTemplates/issues
