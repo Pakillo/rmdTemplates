@@ -201,6 +201,13 @@ $for(header-includes)$
 $header-includes$
 $endfor$
 
+%%Fix tightlist error: https://stackoverflow.com/questions/40438037/tightlist-error-using-pandoc-with-markdown
+%%Added 2018-03-26 
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+%%%  
+  
+
 \begin{document}
 %%Edited by @jhollist 09/15/2014
 %%Adds title from YAML
