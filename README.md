@@ -13,8 +13,7 @@ An R package containing a collection of Rmarkdown templates. Includes templates 
 To install the package, run:
 
 ```{r}
-library(devtools)
-install_github("Pakillo/rmdTemplates")
+remotes::install_github("Pakillo/rmdTemplates")
 ```
 
 If using Windows and being unable to build packages from source, you can download and install the binary package from here: https://github.com/Pakillo/rmdTemplates/releases/latest.
@@ -27,7 +26,7 @@ to have access to the templates.
 
 ![](https://sites.google.com/site/rodriguezsanchezf/news/writingpapersinrmarkdown/NewRmarkdown.PNG?attredirects=0)
 
-See [Writing papers in Rmarkdown](https://sites.google.com/site/rodriguezsanchezf/news/writingpapersinrmarkdown) and http://rmarkdown.rstudio.com/developer_document_templates.html for 
+See [Writing papers in Rmarkdown](https://frodriguezsanchez.net/post/writing-papers-in-rmarkdown/) and https://bookdown.org/yihui/rmarkdown/document-templates.html for 
 more information.
 
 
