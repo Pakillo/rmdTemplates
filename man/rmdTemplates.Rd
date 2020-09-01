@@ -3,7 +3,6 @@
 \docType{package}
 \name{rmdTemplates}
 \alias{rmdTemplates}
-\alias{rmdTemplates-package}
 \title{A collection of Rmarkdown templates}
 \description{
 A collection of Rmarkdown templates. Include helpful defaults for
