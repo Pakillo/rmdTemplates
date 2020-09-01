@@ -2,7 +2,7 @@
 title: "Review of ..."
 author: "Your name"
 date: "`r Sys.Date()`"
-output: pdf_document
+output: github_document
 #bibliography: references.bib
 ---
 
