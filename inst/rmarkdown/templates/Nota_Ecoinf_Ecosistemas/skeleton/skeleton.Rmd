@@ -1,5 +1,5 @@
 ---
-title: "| Título en español \n| Title in English\n"
+title: "| Nota Ecoinformática sobre ... \n"
   
 author: Nombre Apellidos^1^, Nombre Apellidos^2^
   
@@ -14,7 +14,6 @@ output:
 csl: ecosistemas.csl
 bibliography: 
   - references.bib
-  - knitcitations.bib
 ---
 
 
@@ -48,7 +47,7 @@ cite_options(citation_format = "pandoc")
 
 # Introducción 
 
-Esta es una plantilla para escribir [Notas Ecoinformáticas](https://github.com/ecoinfAEET/Notas_Ecosistemas) en formato Rmarkdown para la revista [Ecosistemas](www.revistaecosistemas.net). Para saber más sobre Rmarkdown, visite http://rmarkdown.rstudio.com. Para ver un ejemplo de manuscrito escrito íntegramente en Rmarkdown, visite https://github.com/ecoinfAEET/Reproducibilidad/blob/master/Repro_ms.Rmd.
+Esta es una plantilla para escribir [Notas Ecoinformáticas](https://ecoinfaeet.github.io/website/notas-ecoinformaticas.html) en formato Rmarkdown para la revista [Ecosistemas](www.revistaecosistemas.net). Para saber más sobre Rmarkdown, visite http://rmarkdown.rstudio.com. Para ver un ejemplo de manuscrito escrito íntegramente en Rmarkdown, visite https://github.com/ecoinfAEET/Reproducibilidad/blob/master/Repro_ms.Rmd.
 
 Hay varias formas de citar bibliografía (véase http://rmarkdown.rstudio.com/authoring_bibliographies_and_citations.html). Una de ellas requiere simplemente adjuntar un fichero BibTex con todas las referencias, y citar cada una de ellas usando su 'CitationKey' [e.g. @Yan2011; @Sutherland2011]. También pueden utilizarse paquetes como [knitcitations](https://cran.r-project.org/web/packages/knitcitations/index.html) o [RefManageR](https://cran.r-project.org/web/packages/RefManageR/index.html) para obtener automáticamente la información bibliográfica de internet. Por ejemplo, para citar un artículo es tan fácil como escribir su DOI `r citep("10.1016/j.tree.2006.03.016")` o incluso solo algunas palabras claves `r citep("Ricklefs 2008 American Naturalist")`. Estos artículos aparecerán automágicamente en la lista de referencias citadas. 
 
@@ -122,7 +121,7 @@ Agradecimientos.
 ###### REFERENCIAS
 
 ```{r write_citations, cache=FALSE, include=FALSE}
-write.bibtex(file="knitcitations.bib")
+write.bibtex(file = "knitcitations.bib")
 ```
 
 <div id = "refs"></div>
