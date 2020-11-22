@@ -1,12 +1,13 @@
 Package: rmdTemplates
 Type: Package
 Title: A collection of Rmarkdown templates
-Version: 0.6.2
+Version: 0.6.3
 Author: F. Rodriguez-Sanchez <f.rodriguez.sanc@gmail.com>. Some templates 
     modified from original templates by Carl Boettiger and Jeff Hollister.
 Maintainer: F. Rodriguez-Sanchez <f.rodriguez.sanc@gmail.com>
 Description: A collection of Rmarkdown templates. Includes templates for 
-    writing scientific manuscripts, manuscript reviews, and other Rmarkdown documents, 
+    writing scientific manuscripts, manuscript reviews, beamer metropolis slides 
+    and other Rmarkdown documents, 
     with support for citations and different bibliography styles. It also includes 
     functions to embed data and Rmarkdown source files within HTML files. 
     After installing the package, click on `create new Rmarkdown document` in
@@ -17,6 +18,7 @@ URL: https://github.com/Pakillo/rmdTemplates
 BugReports: https://github.com/Pakillo/rmdTemplates/issues
 Imports:
     base64enc,
+    binb,
     knitr,
     knitcitations,
     rmarkdown

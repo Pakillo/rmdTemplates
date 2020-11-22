@@ -1,30 +1,30 @@
 ---
 title: "Beamer PDF slides with metropolis theme"
+subtitle: "Nice subtitle here"
 author: "name"
+institute: "Your institution"
 date: "today"
-fontsize: 9pt
-output:
-  beamer_presentation: 
-    df_print: kable
-    fig_caption: no
-    fig_height: 3
-    fig_width: 4
-    includes:
-      in_header: header.tex
-    latex_engine: pdflatex
-    slide_level: 2
-    theme: metropolis
+fontsize: 10pt
+output: 
+  binb::metropolis:
+    keep_tex: no
+    pandoc_args: ["--lua-filter=hideslide.lua"]
+urlcolor: blue
+linkcolor: blue
+header-includes:
+  - \definecolor{shadecolor}{RGB}{230,230,230}
+  # - \setbeamercolor{frametitle}{bg=black}
 ---
 
 
 ```{r knitr_setup, include=FALSE, cache=FALSE}
 
-library(knitr)
+library("knitr")
 
 ### Chunk options ###
 
 ## Text results
-opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE, eval = TRUE, size = 'footnotesize')
+opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE, size = 'tiny')
 
 ## Code decoration
 opts_chunk$set(tidy = FALSE, comment = NA, highlight = TRUE, prompt = FALSE, crop = TRUE)
@@ -41,9 +41,9 @@ opts_chunk$set(fig.align = 'center', out.width = '4in', out.height = '3in')
 knit_hooks$set(crop = hook_pdfcrop)
 
 ## Reduce font size
-## use smallfont = TRUE as chunk option to reduce font size
+## use tinycode = TRUE as chunk option to reduce code font size
 # see http://stackoverflow.com/a/39961605
-knit_hooks$set(smallfont = function(before, options, envir) {
+knit_hooks$set(tinycode = function(before, options, envir) {
   if (before) return(paste0("\n \\", options$size, "\n\n"))
   else return("\n\n \\normalsize \n")
   })
@@ -61,4 +61,153 @@ Fill **in** with *content*:
 - code chunks
 - images (use `knitr::include_graphics`)
 
+
+---
+
+This slide does not have a title
+
+---
+
+(bigger)
+
+\huge
+
+This slide does not have a title
+
+\normalsize
+
+
+## Change text size
+
+\tiny Some text
+
+\scriptsize Some text
+
+\footnotesize Some text
+
+\small Some text
+
+\normalsize Some text
+
+\large Some text
+
+\huge Some text
+
+
+## Show items incrementally
+
+>- First item
+
+>- Second item
+
+
+
+## Show items incrementally (alternative)
+
+::: incremental
+- First item
+
+- Second item
+
+:::
+
+
+## Show items NON incrementally 
+
+::: nonincremental :::
+- First item
+
+- Second item
+
+:::
+
+
+## Add some vertical and horizontal space 
+
+Some text here
+
+\vspace{10mm}
+
+\hspace{10mm} Some more text
+
+
+## Add a pause within a slide
+
+Some text 
+
+. . . 
+
+More text
+
+
+
+## This slide has some small text aligned on the right
+
+See below 
+
+\raggedright 
+\footnotesize Some reference here
+\raggedleft
+
+
+## Center align text
+
+\centering This text is centered
+
+
+## Show some links
+
+[a link](https://example.org)
+
+
+::: hide :::
+## Hide this slide
+
+Do not show it
+
+:::
+
+
+## A slide with subheadings
+
+### Heading 1
+
+- Bla bla
+
+### Heading 2
+
+- Bla bla
+
+
+
+## This slide has two columns
+
+:::::::::::::: {.columns align=center totalwidth=8em}
+::: {.column width="40%"}
+Some text on the left
+
+Could be an image too
+:::
+::: {.column width="60%" align=top}
+Something else on the right
+
+whatever
+:::
+::::::::::::::
+
+
+## Include some code
+
+```{r echo=TRUE}
+data(iris)
+plot(iris)
+```
+
+
+## Reduce code size
+
+```{r echo=TRUE, tinycode=TRUE}
+data(iris)
+plot(iris)
+```
 
