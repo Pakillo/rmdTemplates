@@ -49,12 +49,13 @@ geometry: margin=1in
 linenumbers: yes
 spacing: doublespacing
 footerdate: yes
-# abstract: 'Uncomment this line to write your abstract here. You can also write it below'
 bibliography: 
   - references.bib
   - knitcitations.bib
 csl: ecology.csl
 # csl: https://raw.githubusercontent.com/citation-style-language/styles/master/new-phytologist.csl
+
+# abstract: 'Uncomment this line to write your abstract here. You can also write it below'
 
 ---
 
@@ -63,12 +64,9 @@ csl: ecology.csl
 
 library("knitr")
 
-#opts_knit$set(root.dir=normalizePath('../'))
-
 ### Chunk options: see http://yihui.name/knitr/options/ ###
-
 ## Text results
-opts_chunk$set(echo = TRUE, warning = TRUE, message = TRUE, include = TRUE)
+opts_chunk$set(echo = FALSE, warning = TRUE, message = TRUE)
 
 ## Code decoration
 opts_chunk$set(tidy = TRUE, comment = NA, highlight = TRUE)
@@ -79,21 +77,19 @@ opts_chunk$set(tidy = TRUE, comment = NA, highlight = TRUE)
 ## Plots
 opts_chunk$set(fig.path = "output/figures/")
 
-
 ```
 
 
-```{r knitcitations, echo=FALSE, cache = FALSE}
+```{r knitcitations, cache = FALSE}
 library(knitcitations)
 cleanbib()   
 cite_options(citation_format = "pandoc")
 ```
 
 
-\singlespace
-
 \vspace{1cm}
 \hrule
+\singlespace
 
 Write your abstract here (or above in YAML if you prefer).
 
@@ -129,7 +125,7 @@ We worked in a **beautiful** place with lots of trees, like *Quercus suber* and 
 
 ## Data collection and analysis
 
-```{r read_data, eval = FALSE, echo = FALSE}
+```{r read_data, eval = FALSE}
 dataset <- read.csv("mydata.csv")
 ```
 
@@ -139,7 +135,7 @@ $$
 y_{i} = \alpha + \beta*x_{i} 
 $$
 
-```{r model, echo = FALSE, eval = FALSE}
+```{r model, eval = FALSE}
 model <- lm(y ~ x)
 ```
 
@@ -150,7 +146,7 @@ We used the statistical language `R` `r citep(citation())` for all our analyses.
 
 # RESULTS
 
-Trees in forest A grew taller than those in forest B (mean height: `r mean(25, 31, 28)` versus `r mean(13, 19, 16)` m). And many more cool results that get updated dynamically.
+Trees in forest *A* grew taller than those in forest *B* (mean height: `r mean(25, 31, 28)` versus `r mean(13, 19, 16)` m). And many more cool results that get updated dynamically.
 
 
 
@@ -163,6 +159,7 @@ Discuss.
 
 # CONCLUSIONS
 
+Wrap up
 
 
 # ACKNOWLEDGEMENTS
@@ -173,7 +170,7 @@ I am so grateful to everyone.
 # REFERENCES
 
 ```{r write_citations, cache=FALSE, include=FALSE}
-write.bibtex(file="knitcitations.bib")
+write.bibtex(file = "knitcitations.bib")
 ```
 
 <div id ="refs"></div>
@@ -189,14 +186,14 @@ write.bibtex(file="knitcitations.bib")
 
 \newpage
 
-```{r Table1, results='asis', echo=FALSE, cache=FALSE}
+```{r Table-Iris}
 kable(head(iris), caption = "A glimpse of the famous *Iris* dataset.")
 ```
 
 
 \newpage
 
-```{r Table2, results='asis', echo=FALSE, cache=FALSE}
+```{r Table-mtcars}
 kable(mtcars[10:16, ], caption = "Now a subset of mtcars dataset.")
 ```
 
@@ -208,7 +205,7 @@ kable(mtcars[10:16, ], caption = "Now a subset of mtcars dataset.")
 
 \newpage
 
-```{r Fig1, echo=FALSE, fig.cap="Just my first figure with a very fantastic caption.", cache=FALSE}
+```{r Fig-scatterplot, fig.cap="Just my first figure with a very fantastic caption.", cache=FALSE}
 x <- rnorm(100)
 y <- jitter(x, 1000)
 plot(x, y)
@@ -218,7 +215,7 @@ plot(x, y)
 
 \blandscape
 
-```{r Fig2, echo=FALSE, fig.cap="Second figure in landscape format.", cache=FALSE}
+```{r Fig-landscape, fig.cap="Second figure in landscape format.", cache=FALSE}
 a <- sort(rnorm(100))
 b <- c(rep("Group Small", 35), rep("Group Big", 65))
 boxplot(a ~ b)
@@ -230,8 +227,9 @@ boxplot(a ~ b)
 
 
 
-```{r sessioninfo, echo = FALSE, eval = FALSE}
+```{r sessioninfo, eval = FALSE}
 # set eval = FALSE if you don't want this info (useful for reproducibility) to appear 
 sessionInfo()
+# sessioninfo::session_info()
 ```
 
