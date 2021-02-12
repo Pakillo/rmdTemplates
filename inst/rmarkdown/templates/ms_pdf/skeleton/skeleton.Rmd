@@ -6,7 +6,7 @@ author:
 - name: Jeffrey W. Hollister
   affilnum: '1,2'
   
-- name: Francisco Rodriguez-Sanchez 
+- name: Francisco Rodríguez-Sánchez 
   affilnum: 3
   email: f.rodriguez.sanc@gmail.com
   
@@ -19,16 +19,20 @@ affiliation:
   affil: Big Name University, Department of R, City, BN, 01020, USA
   
 - affilnum: 3
-  affil: Estacion Biologica de Donana (EBD-CSIC), E-41092 Sevilla, Spain
+  affil: Estacion Biológica de Doñana (EBD-CSIC), E-41092 Sevilla, Spain
   
 output:
 
   pdf_document:
+  # bookdown::pdf_document2:
+  # Use bookdown::pdf_document2 for cross-referencing
     fig_caption: yes
     fig_width: 7
     fig_height: 7
+    df_print: kable
     keep_tex: yes
     number_sections: no
+    toc: no
     template: manuscript.latex
     includes:
       in_header: header.tex
@@ -45,11 +49,12 @@ geometry: margin=1in
 linenumbers: yes
 spacing: doublespacing
 footerdate: yes
-abstract: no
+# abstract: 'Uncomment this line to write your abstract here. You can also write it below'
 bibliography: 
   - references.bib
   - knitcitations.bib
 csl: ecology.csl
+# csl: https://raw.githubusercontent.com/citation-style-language/styles/master/new-phytologist.csl
 
 ---
 
@@ -69,7 +74,7 @@ opts_chunk$set(echo = TRUE, warning = TRUE, message = TRUE, include = TRUE)
 opts_chunk$set(tidy = TRUE, comment = NA, highlight = TRUE)
 
 ## Cache
-opts_chunk$set(cache = 2, cache.path = "output/cache/")
+# opts_chunk$set(cache = 2, cache.path = "output/cache/")
 
 ## Plots
 opts_chunk$set(fig.path = "output/figures/")
@@ -87,17 +92,23 @@ cite_options(citation_format = "pandoc")
 
 \singlespace
 
-\vspace{2mm}\hrule
+\vspace{1cm}
+\hrule
 
-Write your abstract here.
+Write your abstract here (or above in YAML if you prefer).
 
-\vspace{3mm}\hrule
+\vspace{3mm}
+\hrule
+\vspace{3mm}
 
 *Keywords*: rmarkdown, reproducible science
+
 
 \doublespace
 
 \bleft
+
+\newpage
 
 
 # INTRODUCTION
@@ -156,6 +167,7 @@ Discuss.
 
 # ACKNOWLEDGEMENTS
 
+I am so grateful to everyone.
 
 
 # REFERENCES
@@ -164,7 +176,7 @@ Discuss.
 write.bibtex(file="knitcitations.bib")
 ```
 
-<div id = "refs"></div>
+<div id ="refs"></div>
 
 
 \eleft
