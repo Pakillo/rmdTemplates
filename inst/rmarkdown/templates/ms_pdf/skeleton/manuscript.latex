@@ -207,6 +207,16 @@ $endfor$
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 %%%  
   
+  
+%% Pandoc templates now require CSLreferences environment
+%% see https://github.com/rstudio/rmarkdown/issues/1649
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newenvironment{CSLReferences}%
+{\setlength{\parindent}{0pt}%
+\everypar{\setlength{\hangindent}{\cslhangindent}}\ignorespaces}%
+{\par}
+%% end
 
 \begin{document}
 %%Edited by @jhollist 09/15/2014
