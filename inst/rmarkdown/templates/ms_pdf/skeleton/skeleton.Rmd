@@ -55,6 +55,8 @@ bibliography:
 csl: ecology.csl
 # csl: https://raw.githubusercontent.com/citation-style-language/styles/master/new-phytologist.csl
 
+link-citations: yes
+
 # abstract: 'Uncomment this line to write your abstract here. You can also write it below'
 
 ---
