@@ -23,8 +23,8 @@ affiliation:
   
 output:
 
-  pdf_document:
-  # bookdown::pdf_document2:
+  # pdf_document:
+  bookdown::pdf_document2:
   # Use bookdown::pdf_document2 for cross-referencing
     fig_caption: yes
     fig_width: 7
@@ -146,7 +146,7 @@ We used the statistical language `R` `r citep(citation())` for all our analyses.
 
 # RESULTS
 
-Trees in forest *A* grew taller than those in forest *B* (mean height: `r mean(25, 31, 28)` versus `r mean(13, 19, 16)` m). And many more cool results that get updated dynamically.
+Trees in forest *A* grew taller than those in forest *B* (mean height: `r mean(25, 31, 28)` versus `r mean(13, 19, 16)` m). And many more cool results that get updated dynamically, e.g. Table \@ref(tab:Table-mtcars) and Fig. \@ref(fig:scatterplot).
 
 
 
@@ -191,7 +191,7 @@ kable(head(iris), caption = "A glimpse of the famous *Iris* dataset.")
 ```
 
 
-\newpage
+\clearpage
 
 ```{r Table-mtcars}
 kable(mtcars[10:16, ], caption = "Now a subset of mtcars dataset.")
@@ -205,7 +205,7 @@ kable(mtcars[10:16, ], caption = "Now a subset of mtcars dataset.")
 
 \newpage
 
-```{r Fig-scatterplot, fig.cap="Just my first figure with a very fantastic caption.", cache=FALSE}
+```{r scatterplot, fig.cap="Just my first figure with a very fantastic caption."}
 x <- rnorm(100)
 y <- jitter(x, 1000)
 plot(x, y)
@@ -215,7 +215,7 @@ plot(x, y)
 
 \blandscape
 
-```{r Fig-landscape, fig.cap="Second figure in landscape format.", cache=FALSE}
+```{r Fig-landscape, fig.cap="Second figure in landscape format."}
 a <- sort(rnorm(100))
 b <- c(rep("Group Small", 35), rep("Group Big", 65))
 boxplot(a ~ b)
