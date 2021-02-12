@@ -9,7 +9,7 @@ R package containing a collection of Rmarkdown templates. Includes templates for
 
 See examples [here](https://github.com/Pakillo/rmdTemplates/tree/master/inst/examples)
 
-- [Beamer Metropolis](https://github.com/Pakillo/rmdTemplates/tree/master/inst/examples/beamer_metropolis_example.pdf)
+- [Beamer Metropolis slides](https://github.com/Pakillo/rmdTemplates/tree/master/inst/examples/beamer_metropolis_example.pdf)
 
 - [Manuscript in PDF](https://github.com/Pakillo/rmdTemplates/tree/master/inst/examples/ms_pdf_example.pdf)
 
