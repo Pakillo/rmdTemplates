@@ -1,0 +1,4 @@
+name: ms_PDF
+description: >
+  Rmarkdown template for writing scientific manuscripts (preferred PDF output).
+create_dir: true
