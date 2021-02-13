@@ -94,6 +94,8 @@ cite_options(citation_format = "pandoc")
 \hrule
 \singlespace
 
+**Abstract**
+
 Write your abstract here (or above in YAML if you prefer).
 
 \vspace{3mm}
