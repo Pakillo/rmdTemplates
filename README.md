@@ -5,9 +5,9 @@
 [![Travis-CI Build Status](https://travis-ci.org/Pakillo/rmdTemplates.svg?branch=master)](https://travis-ci.org/Pakillo/rmdTemplates)
 
 
-R package containing a collection of Rmarkdown templates. Includes templates for writing scientific manuscripts, manuscript reviews, Beamer metropolis slides and other Rmarkdown documents, with support for citations and different bibliography styles. It also includes functions to embed data and Rmarkdown source files within HTML files. 
+A collection of [Rmarkdown](https://rmarkdown.rstudio.com) templates for writing scientific manuscripts, manuscript reviews, Beamer slides (metropolis theme) and other Rmarkdown documents, with support for cross-references, citations and different bibliography styles. 
 
-See examples [here](https://github.com/Pakillo/rmdTemplates/tree/master/inst/examples)
+See examples [here](https://github.com/Pakillo/rmdTemplates/tree/master/inst/examples):
 
 - [Beamer Metropolis slides](https://github.com/Pakillo/rmdTemplates/tree/master/inst/examples/beamer_metropolis_example.pdf)
 
@@ -35,5 +35,5 @@ See [Writing papers in Rmarkdown](https://frodriguezsanchez.net/post/writing-pap
 more information.
 
 
-Thanks to Yihui Xie, the Rstudio team, Carl Boettiger, Jeff Hollister, and all the people developing and contributing to this workflow.
+Thanks to Yihui Xie, the Rstudio team, John MacFarlane, and all the people contributing to this workflow.
 
