@@ -37,6 +37,14 @@ See [Writing papers in Rmarkdown](https://frodriguezsanchez.net/post/writing-pap
 more information.
 
 
+### Citation
+
+If you use any of these templates, I'd be grateful if you provided a link to your document in [this issue](https://github.com/Pakillo/rmdTemplates/issues/14). It can be helpful to know how other people are using and modifying these templates.
+
+If you wish to cite the package or template:
+
+F. Rodriguez-Sanchez (2021) rmdTemplates: a collection of Rmarkdown templates. https://doi.org/10.5281/zenodo.595249.
+
 
 ### Acknowledgements
 
