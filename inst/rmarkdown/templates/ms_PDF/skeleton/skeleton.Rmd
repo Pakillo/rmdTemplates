@@ -6,6 +6,7 @@ author:
 # may use lua filters for affiliations etc: see https://stackoverflow.com/a/52919256
 
 # date: `r Sys.Date()`
+
 output:
   bookdown::pdf_document2:
     fig_caption: yes
@@ -26,12 +27,15 @@ geometry: margin=1in
 linestretch: 2
 fontfamily: mathpazo
 fontsize: 11pt
-link-citations: yes
+
 bibliography: 
   - references.bib
   - knitcitations.bib
+# zotero: "My shared Zotero group"
 csl: ecology.csl
 # csl: https://www.zotero.org/styles/ecology
+
+link-citations: yes
 linkcolor: RoyalBlue
 urlcolor: RoyalBlue
 links-as-notes: false
@@ -53,17 +57,15 @@ links-as-notes: false
 
 \vspace{1cm}
 \hrule
-\singlespace
 
 Write your abstract here.
 
 \vspace{3mm}
 \hrule
-\vspace{3mm}
+\vspace{5mm}
 
 *Keywords*: Rmarkdown, reproducible science
 
-\doublespace
 \bleft
 \newpage
 
