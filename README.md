@@ -9,9 +9,9 @@ A collection of [Rmarkdown](https://rmarkdown.rstudio.com) templates for writing
 
 See examples [here](https://github.com/Pakillo/rmdTemplates/tree/master/inst/examples):
 
-- [Beamer Metropolis slides](https://github.com/Pakillo/rmdTemplates/tree/master/inst/examples/beamer_metropolis_example.pdf)
+- [Beamer Metropolis slides](https://github.com/Pakillo/rmdTemplates/tree/master/inst/examples/Beamer_metropolis_example.pdf)
 
-- [Manuscript in PDF](https://github.com/Pakillo/rmdTemplates/tree/master/inst/examples/ms_pdf_example.pdf)
+- [Manuscript in PDF](https://github.com/Pakillo/rmdTemplates/tree/master/inst/examples/ms_PDF_example.pdf)
 
 
 
