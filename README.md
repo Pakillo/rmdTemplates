@@ -1,6 +1,6 @@
 ## Rmarkdown templates
 
-[![DOI](https://zenodo.org/badge/doi/10.5281/zenodo.51346.svg)](http://dx.doi.org/10.5281/zenodo.51346)
+[![DOI](https://zenodo.org/badge/doi/10.5281/zenodo.595249.svg)](https://doi.org/10.5281/zenodo.595249)
 
 [![Travis-CI Build Status](https://travis-ci.org/Pakillo/rmdTemplates.svg?branch=master)](https://travis-ci.org/Pakillo/rmdTemplates)
 
@@ -12,6 +12,8 @@ See examples [here](https://github.com/Pakillo/rmdTemplates/tree/master/inst/exa
 - [Beamer Metropolis slides](https://github.com/Pakillo/rmdTemplates/tree/master/inst/examples/Beamer_metropolis_example.pdf)
 
 - [Manuscript in PDF](https://github.com/Pakillo/rmdTemplates/tree/master/inst/examples/ms_PDF_example.pdf)
+
+- [Manuscript in Word](https://github.com/Pakillo/rmdTemplates/tree/master/inst/examples/ms_Word_example.docx)
 
 
 
@@ -34,6 +36,9 @@ to have access to the templates.
 See [Writing papers in Rmarkdown](https://frodriguezsanchez.net/post/writing-papers-in-rmarkdown/) and https://bookdown.org/yihui/rmarkdown/document-templates.html for 
 more information.
 
+
+
+### Acknowledgements
 
 Thanks to Yihui Xie, the Rstudio team, John MacFarlane, and all the people contributing to this workflow.
 

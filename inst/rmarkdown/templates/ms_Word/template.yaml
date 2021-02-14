@@ -1,0 +1,4 @@
+name: ms_Word
+description: >
+  Rmarkdown template for writing scientific manuscripts (Word docx output).
+create_dir: true

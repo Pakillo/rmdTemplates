@@ -1,0 +1,181 @@
+---
+title: "A template for writing manuscripts in Rmarkdown"
+
+author: Francisco Rodríguez-Sánchez^1,2^*, Second Author^3^
+
+# date: `r Sys.Date()`
+
+output:
+  bookdown::word_document2:
+    fig_caption: yes
+    fig_width: 7
+    fig_height: 7
+    df_print: kable
+    keep_md: yes
+    number_sections: no
+    toc: no
+    reference_docx: Word_template.docx
+    
+bibliography: 
+  - references.bib
+  - knitcitations.bib
+csl: ecology.csl
+# csl: https://www.zotero.org/styles/ecology
+
+---
+
+^1^ Estación Biológica de Doñana (CSIC)
+
+^2^ Universidad de Sevilla
+
+^3^ Second Author affiliation
+
+`*` Corresponding author: example@example.com
+
+
+# ABSTRACT
+
+Write your abstract here.
+
+
+*Keywords*: Rmarkdown, reproducible science
+
+
+
+
+
+
+```{r setup, include=FALSE, cache=FALSE, message = FALSE}
+
+library("knitr")
+
+### Chunk options: see http://yihui.name/knitr/options/ ###
+## Text results
+opts_chunk$set(echo = FALSE, warning = TRUE, message = TRUE)
+
+## Code decoration
+opts_chunk$set(tidy = TRUE, comment = NA, highlight = TRUE)
+
+## Cache
+# opts_chunk$set(cache = 2, cache.path = "output/cache/")
+
+## Plots
+opts_chunk$set(fig.path = "output/figures/")
+
+```
+
+
+```{r knitcitations, cache = FALSE}
+library(knitcitations)
+cleanbib()   
+cite_options(citation_format = "pandoc")
+```
+
+
+
+
+# INTRODUCTION
+
+Write your introduction here. You can cite bibliography like this [@Yan2011; @Sutherland2011] if you provide a `BibTeX` file with references. See http://rmarkdown.rstudio.com for more information. 
+
+You can even specify the desired output format for your bibliography by including a style file for a specific journal (e.g. "ecology.csl"). Many different bibliography styles (CSL files) can be obtained at http://citationstyles.org/, https://github.com/citation-style-language/styles, or https://zotero.org/styles.
+
+
+
+# METHODS
+
+
+## Study Area
+
+We worked in a **beautiful** place with lots of trees, like *Quercus suber* and *Laurus nobilis*.
+
+
+## Data collection and analysis
+
+```{r read_data, eval = FALSE}
+dataset <- read.csv("mydata.csv")
+```
+
+We applied a linear model where
+
+$$
+y_{i} = \alpha + \beta*x_{i} 
+$$
+
+```{r model, eval = FALSE}
+model <- lm(y ~ x)
+```
+
+We used the statistical language `R` `r citep(citation())` for all our analyses. These were implemented in dynamic rmarkdown documents using `knitr` `r citep(citation("knitr"))` and `rmarkdown` `r citep(citation("rmarkdown"))` packages. All the multilevel models were fitted with `lme4` `r citep(citation("lme4"))`. 
+
+
+
+
+# RESULTS
+
+Trees in forest *A* grew taller than those in forest *B* (mean height: `r mean(25, 31, 28)` versus `r mean(13, 19, 16)` m). 
+
+And many more cool results that get updated dynamically, e.g. see Table \@ref(tab:Table-mtcars) and Fig. \@ref(fig:scatterplot). Note Tables and Figures are cross-linked and numbered automatically. 
+
+
+```{r Table-Iris}
+kable(head(iris), caption = "A glimpse of the famous Iris dataset.")
+```
+
+
+```{r scatterplot, fig.cap="Just my first figure with a very fantastic caption."}
+x <- rnorm(100)
+y <- jitter(x, 1000)
+plot(x, y)
+```
+
+
+# DISCUSSION
+
+Discuss.
+
+
+
+# CONCLUSIONS
+
+Wrap up
+
+
+# ACKNOWLEDGEMENTS
+
+On the shoulders of giants.
+
+
+# REFERENCES
+
+```{r write_citations, cache=FALSE, include=FALSE}
+write.bibtex(file = "knitcitations.bib")
+```
+
+<div id ="refs"></div>
+
+
+
+###### Supplementary Table (on new page)
+
+```{r Table-mtcars}
+kable(mtcars[10:16, ], caption = "Now a subset of mtcars dataset.")
+```
+
+
+###### Supplementary Figure (on new page)
+
+```{r Fig-landscape, fig.cap="A boxplot."}
+a <- sort(rnorm(100))
+b <- c(rep("Group Small", 35), rep("Group Big", 65))
+boxplot(a ~ b)
+```
+
+
+
+
+```{r sessioninfo, eval = FALSE}
+# set eval = FALSE if you don't want this info (useful for reproducibility) to appear 
+sessionInfo()
+# sessioninfo::session_info()
+```

@@ -1,11 +1,11 @@
 Package: rmdTemplates
 Type: Package
 Title: A collection of Rmarkdown templates
-Version: 0.8.0
-Author: F. Rodríguez-Sánchez <f.rodriguez.sanc@gmail.com>. 
-Maintainer: F. Rodríguez-Sánchez <f.rodriguez.sanc@gmail.com>
-Description: A collection of Rmarkdown templates for 
-    writing scientific manuscripts, manuscript reviews, Beamer slides (metropolis theme) 
+Version: 0.9.0
+Author: F. Rodriguez-Sanchez <f.rodriguez.sanc@gmail.com>. 
+Maintainer: F. Rodriguez-Sanchez <f.rodriguez.sanc@gmail.com>
+Description: A collection of Rmarkdown templates for writing scientific manuscripts, 
+    manuscript reviews, Beamer slides (metropolis theme) 
     and other Rmarkdown documents, with support for cross-references, 
     citations and different bibliography styles. 
 License: CC0
@@ -14,9 +14,12 @@ BugReports: https://github.com/Pakillo/rmdTemplates/issues
 Imports:
     base64enc,
     binb,
+    bookdown,
     knitr,
     knitcitations,
     rmarkdown
 Suggests:
     devtools
 RoxygenNote: 7.1.1
+Encoding: UTF-8
+
