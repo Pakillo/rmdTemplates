@@ -42,6 +42,7 @@ links-as-notes: false
 
 ---
 
+<!--# Insert author affiliations below -->
 
 \small
 
@@ -54,6 +55,10 @@ links-as-notes: false
 `*` Corresponding author: example@example.com
 
 \normalsize
+
+
+
+<!--# Write Abstract and Keywords below -->
 
 \vspace{1cm}
 \hrule
@@ -102,11 +107,16 @@ cite_options(citation_format = "pandoc")
 
 
 
+<!--# Start writing your paper below -->
+
+
 # INTRODUCTION
 
-Write your introduction here. You can cite bibliography like this [@Yan2011; @Sutherland2011] if you provide a `BibTeX` file with references. See http://rmarkdown.rstudio.com for more information. Or you could also use [knitcitations](https://cran.r-project.org/web/packages/knitcitations/index.html) or [RefManageR](https://cran.r-project.org/web/packages/RefManageR/index.html) to fetch bibliographic metadata automatically from the web. For example, citing a paper can be as easy as providing its DOI `r citep("10.1016/j.tree.2006.03.016")` or even just a few keywords `r citep("Ricklefs 2008 American Naturalist")`. They will then *automagically* appear in the list of cited references.
+Write your introduction here. 
 
-You can even specify the desired output format for your bibliography by including a style file for a specific journal (e.g. "ecology.csl"). Many different bibliography styles (CSL files) can be obtained at http://citationstyles.org/, https://github.com/citation-style-language/styles, or https://zotero.org/styles.
+You can **cite bibliography** like this [@Yan2011; @Sutherland2011] if you provide a `BibTeX` file with references. You can also search for references on PubMed, DataCite or Crossref, cite by DOI, or read them from your Zotero library or a shared Zotero group (see https://rstudio.github.io/visual-markdown-editing/#/citations and https://rmarkdown.rstudio.com/authoring_bibliographies_and_citations.html for more information). 
+
+You can also specify the desired output format for your bibliography (see `csl` field in the YAML above). Many different bibliography styles (CSL files) can be obtained at https://zotero.org/styles or https://github.com/citation-style-language/styles.
 
 
 
@@ -143,9 +153,9 @@ We used the statistical language `R` `r citep(citation())` for all our analyses.
 
 Trees in forest *A* grew taller than those in forest *B* (mean height: `r mean(25, 31, 28)` versus `r mean(13, 19, 16)` m). 
 
-And many more cool results that get updated dynamically, e.g. see Table \@ref(tab:Table-mtcars) and Fig. \@ref(fig:scatterplot). Note Tables and Figures are cross-linked and numbered automatically. They could also appear in the middle of the document, not necessarily at the end.
+And many more cool results that get updated dynamically, e.g. see Table \@ref(tab:Table-mtcars) and Fig. \@ref(fig:scatterplot). Note Tables and Figures are **cross-linked and numbered automatically**. They could also appear in the middle of the document, not necessarily at the end.
 
-
+See also Fig. \@ref(fig:SupplFig) and Table \@ref(tab:SupplTable) in the Supplementary Material.
 
 
 # DISCUSSION
@@ -178,6 +188,8 @@ write.bibtex(file = "knitcitations.bib")
 \clearpage
 
 
+<!--# Tables below -->
+
 \listoftables
 
 
@@ -196,6 +208,10 @@ kable(mtcars[10:16, ], caption = "Now a subset of mtcars dataset.", booktabs = T
 
 
 \clearpage
+
+
+
+<!--# Figures below -->
 
 \listoffigures
 
@@ -223,6 +239,28 @@ boxplot(a ~ b)
 \clearpage
 
 
+
+
+# SUPPLEMENTARY MATERIAL {-}
+
+\beginsupplement
+
+
+\clearpage
+
+```{r SupplTable}
+kable(head(iris), caption = "A supplementary table.", booktabs = TRUE)
+```
+
+\clearpage
+
+```{r SupplFig, fig.cap="A Supplementary Figure."}
+x <- rnorm(100)
+y <- jitter(x, 1000)
+plot(x, y)
+```
+
+\newpage
 
 ```{r sessioninfo, eval = FALSE}
 # set eval = FALSE if you don't want this info (useful for reproducibility) to appear 
