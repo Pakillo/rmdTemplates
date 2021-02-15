@@ -5,7 +5,7 @@ author:
   - Second Author^3^
 # may use lua filters for affiliations etc: see https://stackoverflow.com/a/52919256
 
-# date: `r Sys.Date()`
+# date: '`r Sys.Date()`'
 
 output:
   bookdown::pdf_document2:
