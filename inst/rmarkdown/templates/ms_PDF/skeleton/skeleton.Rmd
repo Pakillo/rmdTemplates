@@ -245,6 +245,7 @@ boxplot(a ~ b)
 
 \beginsupplement
 
+<!--# To have separate reference lists for main text and Suppl Mat, see https://gist.github.com/Pakillo/e1407cc0632a9202813ec2aee2434cc3 -->
 
 \clearpage
 
