@@ -12,6 +12,7 @@ License: CC0
 URL: https://github.com/Pakillo/rmdTemplates
 BugReports: https://github.com/Pakillo/rmdTemplates/issues
 Imports:
+    base64enc,
     binb,
     bookdown,
     knitr,

@@ -1,8 +1,9 @@
 ## Rmarkdown templates
 
+<!-- badges: start -->
 [![DOI](https://zenodo.org/badge/doi/10.5281/zenodo.595249.svg)](https://doi.org/10.5281/zenodo.595249)
-
-[![Travis-CI Build Status](https://travis-ci.org/Pakillo/rmdTemplates.svg?branch=master)](https://travis-ci.org/Pakillo/rmdTemplates)
+[![R-CMD-check](https://github.com/Pakillo/rmdTemplates/workflows/R-CMD-check/badge.svg)](https://github.com/Pakillo/rmdTemplates/actions)
+<!-- badges: end -->
 
 
 A collection of [Rmarkdown](https://rmarkdown.rstudio.com) templates for writing scientific manuscripts, manuscript reviews, Beamer slides (metropolis theme) and other Rmarkdown documents, with support for cross-references, citations and different bibliography styles. 
