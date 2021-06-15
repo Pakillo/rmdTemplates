@@ -1,7 +1,7 @@
 Package: rmdTemplates
 Type: Package
 Title: A collection of Rmarkdown templates
-Version: 0.9.1
+Version: 0.9.2
 Author: F. Rodriguez-Sanchez <f.rodriguez.sanc@gmail.com>. 
 Maintainer: F. Rodriguez-Sanchez <f.rodriguez.sanc@gmail.com>
 Description: A collection of Rmarkdown templates for writing scientific manuscripts, 
@@ -12,7 +12,6 @@ License: CC0
 URL: https://github.com/Pakillo/rmdTemplates
 BugReports: https://github.com/Pakillo/rmdTemplates/issues
 Imports:
-    base64enc,
     binb,
     bookdown,
     knitr,
