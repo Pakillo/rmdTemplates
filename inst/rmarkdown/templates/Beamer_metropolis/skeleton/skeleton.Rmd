@@ -9,6 +9,8 @@ fontsize: 10pt
 output: 
   binb::metropolis:
     keep_tex: no
+    incremental: yes
+    fig_caption: no
     pandoc_args: ["--lua-filter=hideslide.lua"]
 urlcolor: blue
 linkcolor: blue
