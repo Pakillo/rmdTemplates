@@ -5,7 +5,7 @@ author: "name"
 institute: "Your institution"
 date: "today"
 aspectratio: 43  # use 169 for wide format
-fontsize: 10pt
+fontsize: 12pt
 output: 
   binb::metropolis:
     keep_tex: no
@@ -37,7 +37,7 @@ opts_chunk$set(tidy = FALSE, comment = NA, highlight = TRUE, prompt = FALSE, cro
 
 # ## Plots
 # opts_chunk$set(fig.path = "knitr_output/figures/")
-opts_chunk$set(fig.align = 'center', out.height = '80%')
+opts_chunk$set(fig.align = 'center', out.width = '90%')
 
 ### Hooks ###
 ## Crop plot margins
