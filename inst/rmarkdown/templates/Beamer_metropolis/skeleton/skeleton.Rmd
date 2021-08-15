@@ -185,13 +185,13 @@ Do not show it
 
 ## This slide has two columns
 
-:::::::::::::: {.columns align=center totalwidth=8em}
+:::::::::::::: {.columns align=center}
 ::: {.column width="40%"}
 Some text on the left
 
 Could be an image too
 :::
-::: {.column width="60%" align=top}
+::: {.column width="60%" align=center}
 Something else on the right
 
 whatever
