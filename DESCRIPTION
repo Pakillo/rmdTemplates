@@ -1,11 +1,11 @@
 Package: rmdTemplates
 Type: Package
 Title: A collection of Rmarkdown templates
-Version: 0.9.2
+Version: 0.10.0
 Author: F. Rodriguez-Sanchez <f.rodriguez.sanc@gmail.com>. 
 Maintainer: F. Rodriguez-Sanchez <f.rodriguez.sanc@gmail.com>
 Description: A collection of Rmarkdown templates for writing scientific manuscripts, 
-    manuscript reviews, Beamer slides (metropolis theme) 
+    manuscript reviews, Beamer slides (metropolis theme), xaringan slides, 
     and other Rmarkdown documents, with support for cross-references, 
     citations and different bibliography styles. 
 License: CC0
@@ -20,6 +20,5 @@ Imports:
     rmarkdown
 Suggests:
     devtools
-RoxygenNote: 7.1.1
+RoxygenNote: 7.1.2
 Encoding: UTF-8
-

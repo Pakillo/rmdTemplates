@@ -1,0 +1,357 @@
+---
+title: "Slide presentation using xaringan"
+subtitle: "A subtitle"
+author: "Francisco Rodríguez-Sánchez"
+date: "@frod_san"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+options(knitr.table.format = "html")
+
+library(knitr)
+knit_hooks$set(crop = hook_pdfcrop)
+opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE, 
+               crop = TRUE, cache = TRUE, comment = "")
+
+opts_chunk$set(out.width = "70%", fig.align = "center", dpi = 150)
+```
+
+
+
+```{css, echo=FALSE}
+
+.remark-slide-number {
+  display: none;
+}
+
+# .remark-slide-content {
+#   font-size: 18px;
+#   padding: 20px 80px 20px 80px;
+# }
+
+.remark-slide-content p, ul, ol, li {
+  font-size: 18px;
+}
+
+
+.remark-code, .remark-inline-code {
+  background: #f0f0f0;
+}
+
+.remark-code {
+  font-size: 18px;
+}
+
+.hugecode .remark-code { font-size: 200% }
+.largecode .remark-code { font-size: 130% }
+.smallcode .remark-code{ font-size: 70% }
+.tinycode .remark-code { font-size: 50% }
+
+.huge { font-size: 200% }
+.large { font-size: 130% }
+.small { font-size: 70% }
+.tiny { font-size: 50% }
+
+```
+
+
+---
+class: inverse, center, middle
+
+background-image: url(http://bit.ly/arm-greens)
+background-size: cover
+
+# Title slide
+
+### My talk about xaringan
+
+```{r echo=FALSE, out.width="20%"}
+include_graphics("https://avatars.githubusercontent.com/u/1597843?v=4")
+```
+
+.large[F. Rodríguez-Sánchez]
+
+*Universidad de Sevilla*
+
+`r icons::fontawesome("link")` [https://frodriguezsanchez.net](https://frodriguezsanchez.net)
+`r icons::fontawesome("twitter")` [@frod_san](https://twitter.com/frod_san)
+
+.small[2 October 2020]
+
+
+---
+
+
+## Normal slide
+
+Normal slide with text and some code
+
+```{r }
+head(iris)
+```
+
+
+---
+class: inverse, center, middle
+
+# Section slide
+
+Dark background
+
+
+---
+class: center, middle
+
+# Section slide
+
+Light background
+
+
+---
+class: center, top
+
+# Section slide
+
+Top align
+
+---
+class: center, bottom
+
+# Section slide
+
+Bottom align
+
+---
+class: left, middle
+
+# Section slide
+
+Left align
+
+---
+
+## Align some text
+
+.left[Left align]
+
+.center[Centered]
+
+.right[Right align]
+
+
+---
+
+## Change font size
+
+.tiny[Tiny]
+
+.small[Small]
+
+Normal
+
+.large[Large]
+
+.huge[Huge]
+
+
+---
+
+## Change code and output size
+
+.tinycode[
+```{r}
+head(iris)
+```
+]
+
+
+---
+
+## Change code and output size
+
+.largecode[
+```{r}
+head(iris)
+```
+]
+
+---
+
+## Incremental content
+
+Show
+
+--
+
+this
+
+--
+
+text
+
+--
+
+incrementally
+
+
+---
+
+# Two columns
+
+.pull-left[
+On the left:
+
+text
+
+code
+
+images
+]
+
+
+.pull-right[
+On the right:
+
+text
+
+code
+
+images
+]
+
+
+---
+
+## Two columns (right column wider)
+
+.left-column[
+On the left:
+
+text
+
+code
+
+images
+]
+
+
+.right-column[
+On the right:
+
+text
+
+code
+
+images
+]
+
+
+---
+
+## Two columns: code + plot
+
+.pull-left[
+```{r plot-last, fig.show = 'hide'}
+plot(iris$Sepal.Length, iris$Sepal.Width)
+```
+]
+.pull-right[
+```{r ref.label = 'plot-last', echo = FALSE}
+```
+]
+
+---
+
+## Two columns: plot on left, code on right
+
+.pull-left[
+```{r plot-first, echo = FALSE}
+plot(iris$Sepal.Length, iris$Sepal.Width)
+```
+]
+.pull-right[
+```{r ref.label = 'plot-first', eval = FALSE}
+```
+]
+
+
+
+---
+
+## Highlight some lines of code
+
+```{r }
+library(dplyr)
+iris %>% 
+  filter(Species == "setosa") #<<
+```
+
+
+---
+
+## Highlight output
+
+```{r highlight.output = TRUE}
+library(dplyr)
+iris %>% 
+  filter(Species == "setosa") 
+```
+
+
+---
+
+## Highlight some lines of output
+
+```{r highlight.output = c(2:5)}
+library(dplyr)
+iris %>% 
+  filter(Species == "setosa") 
+```
+
+
+---
+class: inverse, center, middle
+
+background-image: url(http://bit.ly/arm-greens)
+background-size: cover
+
+# Background image
+
+---
+
+layout: true
+
+background-image: url(https://www.us.es/sites/default/files/2019-05/marca-US-principal.jpg)
+background-position: 0% 100%;
+background-size: 10%
+
+---
+
+## Slide with logo
+
+To stop including logo, use layout: false
+
+---
+
+layout: false
+
+---
+
+## Link to specific slide
+
+[Go to final slide](#END)
+
+
+---
+
+## END
+
+That's all

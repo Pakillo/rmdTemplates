@@ -6,11 +6,13 @@
 <!-- badges: end -->
 
 
-A collection of [Rmarkdown](https://rmarkdown.rstudio.com) templates for writing scientific manuscripts, manuscript reviews, Beamer slides (metropolis theme) and other Rmarkdown documents, with support for cross-references, citations and different bibliography styles. 
+A collection of [Rmarkdown](https://rmarkdown.rstudio.com) templates for writing scientific manuscripts, manuscript reviews, Beamer slides (metropolis theme), xaringan HTML slides, and other Rmarkdown documents, with support for cross-references, citations and different bibliography styles. 
 
 See examples [here](https://github.com/Pakillo/rmdTemplates/tree/master/inst/examples):
 
 - [Beamer Metropolis slides](https://github.com/Pakillo/rmdTemplates/tree/master/inst/examples/Beamer_metropolis_example.pdf)
+
+- [Xaringan slides](https://github.com/Pakillo/rmdTemplates/tree/master/inst/examples/slides_xaringan_example.pdf)
 
 - [Manuscript in PDF](https://github.com/Pakillo/rmdTemplates/tree/master/inst/examples/ms_PDF_example.pdf)
 
