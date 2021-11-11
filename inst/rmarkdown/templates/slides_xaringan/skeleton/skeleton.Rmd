@@ -6,7 +6,9 @@ date: "@frod_san"
 output:
   xaringan::moon_reader:
     lib_dir: libs
+    seal: true  # set to false to omit title slide
     nature:
+      ratio: '16:9'
       highlightStyle: github
       highlightLines: true
       countIncrementalSlides: false
