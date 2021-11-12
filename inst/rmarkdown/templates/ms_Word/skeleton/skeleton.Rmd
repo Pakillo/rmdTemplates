@@ -155,15 +155,18 @@ write.bibtex(file = "knitcitations.bib")
 <div id ="refs"></div>
 
 
+\newpage
 
-###### Supplementary Table (on new page)
+# Supplementary Table (on new page)
 
 ```{r Table-mtcars}
 kable(mtcars[10:16, ], caption = "Now a subset of mtcars dataset.")
 ```
 
 
-###### Supplementary Figure (on new page)
+\newpage
+
+# Supplementary Figure (on new page)
 
 ```{r Fig-landscape, fig.cap="A boxplot."}
 a <- sort(rnorm(100))
@@ -179,3 +182,4 @@ boxplot(a ~ b)
 sessionInfo()
 # sessioninfo::session_info()
 ```
+
