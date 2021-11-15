@@ -152,7 +152,8 @@ On the shoulders of giants.
 write.bibtex(file = "knitcitations.bib")
 ```
 
-<div id ="refs"></div>
+::: {#refs}
+:::
 
 
 \newpage
