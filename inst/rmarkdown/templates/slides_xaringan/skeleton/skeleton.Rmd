@@ -2,6 +2,7 @@
 title: "Slide presentation using xaringan"
 subtitle: "A subtitle"
 author: "Francisco Rodríguez-Sánchez"
+institute: https://frodriguezsanchez.net
 date: "@frod_san"
 output:
   xaringan::moon_reader:
@@ -61,6 +62,43 @@ opts_chunk$set(out.width = "70%", fig.align = "center", dpi = 150)
 .large { font-size: 130% }
 .small { font-size: 70% }
 .tiny { font-size: 50% }
+
+
+.code10 .remark-code {
+  font-size: 10%;
+}
+
+.code20 .remark-code {
+  font-size: 20%;
+}
+
+.code30 .remark-code {
+  font-size: 30%;
+}
+
+.code40 .remark-code {
+  font-size: 40%;
+}
+
+.code50 .remark-code {
+  font-size: 50%;
+}
+
+.code60 .remark-code {
+  font-size: 60%;
+}
+
+.code70 .remark-code {
+  font-size: 70%;
+}
+
+.code80 .remark-code {
+  font-size: 80%;
+}
+
+.code90 .remark-code {
+  font-size: 90%;
+}
 
 ```
 
