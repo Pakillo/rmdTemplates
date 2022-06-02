@@ -1,3 +1,8 @@
+rmdTemplates 0.11.0
+==================
+
+- New parameterized template for generating individual PDF certificates (e.g. certificates of attendance for a course, conference, etc). Comes with helper function `generate certificates` to facilitate document generation.
+
 rmdTemplates 0.6.0
 ==================
 
