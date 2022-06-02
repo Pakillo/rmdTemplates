@@ -6,19 +6,23 @@
 #' @param names A character vector of people names
 #' @param rmd Path to an Rmarkdown parameterized document.
 #' @param outdir Output directory where individual certificates will be saved
+#' @param ... Optional list of parameters for the Rmarkdown template.
 #'
 #' @return One or many PDF files with individual certificates
 #' @export
 #'
 
-generate_certificates <- function(names = NULL, rmd = NULL, outdir = "certificates") {
+generate_certificates <- function(names = NULL, rmd = NULL, 
+                                  outdir = "certificates", 
+                                  ...) {
   
   for (i in names) {
     
     rmarkdown::render(input = rmd, 
                       output_file = paste0(i, ".pdf"),
                       output_dir = outdir,
-                      params = list(attendee = i))
+                      params = c(list(attendee = i),
+                                 ...))
     
   }
 
