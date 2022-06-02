@@ -8,6 +8,8 @@
 
 A collection of [Rmarkdown](https://rmarkdown.rstudio.com) templates for writing scientific manuscripts, manuscript reviews, Beamer slides (metropolis theme), xaringan HTML slides, and other Rmarkdown documents, with support for cross-references, citations and different bibliography styles. 
 
+Also includes a template and function (`generate_certificates`) to easily generate many individual PDF certificates for many people. This can be combined with packages like [gmailr](https://gmailr.r-lib.org/) or [blastula](https://pkgs.rstudio.com/blastula/) to automate the delivery of hundreds of certificates (e.g. for courses, conferences, etc).
+
 See examples [here](https://github.com/Pakillo/rmdTemplates/tree/master/inst/examples):
 
 - [Beamer Metropolis slides](https://github.com/Pakillo/rmdTemplates/tree/master/inst/examples/Beamer_metropolis_example.pdf)
@@ -17,6 +19,8 @@ See examples [here](https://github.com/Pakillo/rmdTemplates/tree/master/inst/exa
 - [Manuscript in PDF](https://github.com/Pakillo/rmdTemplates/tree/master/inst/examples/ms_PDF_example.pdf)
 
 - [Manuscript in Word](https://github.com/Pakillo/rmdTemplates/tree/master/inst/examples/ms_Word_example.docx)
+
+- [Certificate of Attendance](https://github.com/Pakillo/rmdTemplates/tree/master/inst/examples/certificate_example.pdf)
 
 
 

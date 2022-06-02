@@ -2,6 +2,7 @@
 
 export(embed_data_html)
 export(embed_rmd_html)
+export(generate_certificates)
 import(knitcitations)
 import(knitr)
 import(rmarkdown)

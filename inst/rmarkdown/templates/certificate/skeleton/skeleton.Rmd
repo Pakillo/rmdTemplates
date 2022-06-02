@@ -1,0 +1,51 @@
+---
+params: 
+
+  attendee: "José Ángel Valente"
+  
+  event: "workshop '*Automatic generation of certificates with Rmarkdown*'"
+  date: "on 10 January 2022"
+  place: "Sevilla, Spain"
+  signer: "John Pachelbel"
+  role: "Organizer"
+  
+output: 
+  pdf_document
+papersize: a4
+pagestyle: empty
+classoption: landscape
+linestretch: 2
+fontfamily: mathpazo
+fontsize: 12pt
+---
+
+```{r include=FALSE}
+library(knitr)
+opts_chunk$set(echo = FALSE)
+```
+
+
+```{r logo, out.width="15%", fig.align='center'}
+include_graphics("logo.png")
+```
+
+\LARGE \center \bf CERTIFICATE OF ATTENDANCE
+
+\normalfont
+\vspace{10mm}
+
+\Large
+Herewith, we certify that **`r params$attendee`** has participated in the `r params$event` that took place `r params$date` in `r params$place`.
+
+\vspace{15mm}
+
+```{r firma, out.width="20%", fig.align='center'}
+include_graphics("signature.png")
+```
+
+\normalsize
+
+`r params$signer`
+
+`r params$role`
+
