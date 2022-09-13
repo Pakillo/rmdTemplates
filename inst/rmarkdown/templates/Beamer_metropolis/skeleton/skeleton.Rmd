@@ -15,6 +15,7 @@ output:
 urlcolor: blue
 linkcolor: blue
 header-includes:
+  # - \usepackage{array}  # for long tables
   - \definecolor{shadecolor}{RGB}{230,230,230}
   # - \setbeamercolor{frametitle}{bg=black}
   # - \logo{\includegraphics[height=2cm, width = 5cm]{logo.png}}  # add logo to all slides
